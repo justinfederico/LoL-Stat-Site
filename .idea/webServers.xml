@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7cdb50b1-562a-4a7b-ae1b-c0497f7c5437" name="test_server" url="http://localhost">
+        <fileTransfer mountedRoot="C:\Users\justi\PycharmProjects\LoL-Stat-Site\Test Server" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
