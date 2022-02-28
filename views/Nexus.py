@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "This is the main page. <h1>MAIN PAGE<h1>"
+    return render_template("index.html", summonerName="Fed")
 
 @app.route("/admin")
 def admin():
