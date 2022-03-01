@@ -5,7 +5,7 @@ app = Flask(__name__)
 #Defining routes for the site, directing the user to the desired page
 @app.route("/", methods=["POST", "GET"])
 def home():
-    return render_template("homePage.html", summonerName="Fed")
+    return render_template("index.html")
 
 @app.route("/admin")
 def admin():
