@@ -1,0 +1,268 @@
+
+:root {
+	--web-view-ids: Home_Page;
+	--web-view-name: Home Page;
+	--web-view-id: Home_Page;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: true;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: false;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: false;
+	--web-application: true;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+}
+#Home_Page {
+	display: none;
+}
+@media (min-width: 0px) {
+	.mediaViewInfo {
+		--web-view-name: Home Page;
+		--web-view-id: Home_Page;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Home_Page {
+		position: absolute;
+		display: block;
+		width: 1540px;
+		height: 930px;
+		background: linear-gradient(142.2deg, rgba(57,57,57,1) 0%, rgba(22,22,22,0.988) 100%);
+		overflow: hidden;
+		--web-view-name: Home Page;
+		--web-view-id: Home_Page;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+	}
+	#Nocturne {
+		position: absolute;
+		width: 1575.993px;
+		height: 930px;
+		left: -182.493px;
+		top: 0px;
+		overflow: visible;
+	}
+	#LOL_STAT_TRACKER {
+		left: 535px;
+		top: 250px;
+		position: absolute;
+		overflow: visible;
+		width: 325px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Tenby Stencil;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 50px;
+		color: rgba(252,169,19,1);
+		letter-spacing: 0.14px;
+		text-transform: capitalize;
+	}
+	#Line_1 {
+		fill: transparent;
+		stroke: rgba(252,169,19,1);
+		stroke-width: 3px;
+		stroke-linejoin: miter;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_1 {
+		overflow: visible;
+		position: absolute;
+		width: 296.75px;
+		height: 3px;
+		left: 550.125px;
+		top: 329.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rectangle_1 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_1 {
+		position: absolute;
+		overflow: visible;
+		width: 500px;
+		height: 42px;
+		left: 447px;
+		top: 365px;
+	}
+	#Line_5 {
+		fill: transparent;
+		stroke: rgba(148,148,148,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_5 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 930.5px;
+		left: 1393.5px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Path_1 {
+		fill: rgba(0,0,0,0);
+		stroke: rgba(148,148,148,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Path_1 {
+		overflow: visible;
+		position: absolute;
+		width: 1px;
+		height: 930px;
+		left: 0px;
+		top: -43.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#login {
+		left: 1442px;
+		top: 162px;
+		position: absolute;
+		overflow: visible;
+		width: 51px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Tenby Stencil;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 26px;
+		color: rgba(211,144,23,1);
+		letter-spacing: 0.4px;
+		text-transform: uppercase;
+	}
+	#HOME {
+		left: 1440px;
+		top: 65px;
+		position: absolute;
+		overflow: visible;
+		width: 55px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Tenby Stencil;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 26px;
+		color: rgba(255,194,83,1);
+		letter-spacing: 0.4px;
+		text-transform: uppercase;
+	}
+	#CHAMPIONS {
+		left: 1414px;
+		top: 259px;
+		position: absolute;
+		overflow: visible;
+		width: 107px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Tenby Stencil;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 26px;
+		color: rgba(211,144,23,1);
+		letter-spacing: 0.4px;
+		text-transform: uppercase;
+	}
+	#Rectangle_2 {
+		filter: blur(5px);
+		fill: rgba(0,0,0,1);
+	}
+	.Rectangle_2 {
+		position: absolute;
+		overflow: visible;
+		width: 1393px;
+		height: 148px;
+		left: 0px;
+		top: 782px;
+	}
+	#ABOUT_US {
+		left: 65px;
+		top: 841px;
+		position: absolute;
+		overflow: visible;
+		width: 85px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Tenby Stencil;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 26px;
+		color: rgba(211,144,23,1);
+		letter-spacing: 0.14px;
+		text-transform: uppercase;
+	}
+	#SUPPORT {
+		left: 214px;
+		top: 841px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Tenby Stencil;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 26px;
+		color: rgba(211,144,23,1);
+		letter-spacing: 0.14px;
+		text-transform: uppercase;
+	}
+	#Enter_Summoner_Name {
+		left: 598px;
+		top: 373px;
+		position: absolute;
+		overflow: visible;
+		width: 199px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Azonix;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(55,55,55,0.451);
+		letter-spacing: 0.4px;
+		text-transform: capitalize;
+	}
+	#Ellipse_1 {
+		fill: rgba(255,194,83,1);
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 8px;
+		height: 8px;
+		left: 1463px;
+		top: 102px;
+	}
+}
