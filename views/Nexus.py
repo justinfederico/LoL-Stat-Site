@@ -2,7 +2,7 @@ from flask import Flask, redirect, url_for, render_template
 
 app = Flask(__name__)
 
-
+#Defining routes for the site, directing the user to the desired page
 @app.route("/")
 def home():
     return render_template("test.html", summonerName="Fed")
