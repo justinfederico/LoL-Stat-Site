@@ -5,13 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Page</title>
-
-<script  src="{{ url_for('static', filename='homePage.js')}}" data-turbolinks-track="reload"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homePage.css')}}">
+<script  src="{{ url_for('static', filename='js/homePage.js')}}" data-turbolinks-track="reload"></script>
 </head>
 <body>
-<link rel="stylesheet" media="all" href="{{ url_for('static', filename='homePage.css')}}">
+
 <div id="Home_Page">
-	<img id="Nocturne" src="{{ url_for('static', filename='Nocturne.png')}}" srcset="{{ url_for('static', filename='Nocturne.png')}} 1x, {{ url_for('static', filename='Nocturne@2x.png')}} 2x">
+	<image id="Nocturne" src="{{ url_for('static', filename='Nocturne.png')}}" srcset="{{ url_for('static', filename='Nocturne.png')}} 1x, {{ url_for('static', filename='Nocturne@2x.png')}} 2x">
 
 	<div id="LOL_STAT_TRACKER">
 		<span>LOL STAT TRACKER</span>
