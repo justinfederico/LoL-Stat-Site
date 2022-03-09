@@ -1,10 +1,69 @@
+/* WEBPAGE CONTAINER */
 .page-holder {
   min-height: 100vh;
+  min-width: 100vh;
 }
 
+/* WEBPAGE BACKGROUND COLOR*/
 .bg-cover {
   background-size: cover !important;
   background: linear-gradient(100deg, #393939, #161616) white;
 }
 
-.vertical-nav-right.
+/* NAVBAR BACKGROUND PROPERTIES */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+}
+
+/* ALLOW STICKY PROPERTY FOR SAFARI USERS */
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+	.sidebar-sticky {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+}
+
+/* LOGO PROPERTIES */
+.navbar-brand {
+  display: block;
+  height: 92px;
+  margin: 0;
+  text-align: center;
+  line-height: 2rem;
+}
+
+/* NAVBAR ITEM CONTAINER */
+.sidebar-sticky {
+  display: block;
+  position: relative;
+  top: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* NAVBAR ITEM PROPERTIES */
+.nav-link {
+  text-align: center;
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-size: 30px; !important
+  font-size: 1vw;
+  color: #DE8F00;
+  margin-left: fill;
+  margin-right: fill;
+  margin-top: 34px;
+  margin-bottom: 34px;
+}
+
+/* ACTIVE NAV ITEM PROPERTIES */
+.active {
+  color: #FFC253;
+}
+
+.search-bar-border {
+  border: medium black;
+}
