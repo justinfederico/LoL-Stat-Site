@@ -257,7 +257,7 @@
  * Code subject to change.
  **/
 
-if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
+if (window.console==null) { window["console"] = { log : function() {} } } // some browsers do not set console
 
 var Application = function() {
 	// event constants
@@ -564,7 +564,7 @@ var Application = function() {
 					if (pageChanged) {
 						clearInterval(self.refreshInterval);
 						self.refreshUpdatedPage();
-						return;
+
 					}
 
 				}
