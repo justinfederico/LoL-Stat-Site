@@ -1,4 +1,16 @@
 /* WEBPAGE CONTAINER */
+:root{ /*This is so that certain fonts/parameters are used universally throughout the site*/
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-size: 30px;
+}
+main{ /*Since I didn't use bootstrap, I manually set margins and such to create the navbar object*/
+  margin-left: 5rem;
+  padding: 1rem;
+}
+body { /*Going to be straight here, don't know why the 'body' tag only changes the titles color*/
+  color: grey;
+}
+
 .page-holder {
   min-height: 100vh;
   min-width: 100vh;
@@ -10,15 +22,20 @@
   background: linear-gradient(100deg, #393939, #161616) white;
 }
 
-/* NAVBAR BACKGROUND PROPERTIES */
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 0;
-}
+/* NAVBAR BACKGROUND PROPERTIES
+*/
 
+/* SCROLLBAR PROPERTIES
+ this is just to make the scrollbar pretty :)*/
+body::-webkit-scrollbar{
+  width: 0.35rem;
+}
+body::-webkit-scrollbar-track{
+  background: #FFC253;
+}
+body::-webkit-scrollbar-thumb{
+  background: #DE8F00;
+}
 /* ALLOW STICKY PROPERTY FOR SAFARI USERS */
 @supports ((position: -webkit-sticky) or (position: sticky)) {
 	.sidebar-sticky {
@@ -27,43 +44,102 @@
 	}
 }
 
-/* LOGO PROPERTIES */
+/* LOGO PROPERTIES
+This will actually do something once the logo is a vector graphic, couldn't find one to use*/
 .navbar-brand {
-  display: block;
-  height: 92px;
-  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
   text-align: center;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
 }
 
 /* NAVBAR ITEM CONTAINER */
-.sidebar-sticky {
-  display: block;
-  position: relative;
-  top: 0;
+.navbar{/* Defining paramters of sidebar, and how it appears to user */
+  width: 5rem;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  position: fixed;
+  background-color: #161616;
+  transition: 200ms ease;
+}
+.navbar-nav{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
+/* Makes support icon appear at bottom of navbar */
+.nav-item:last-child{
+  margin-top: auto;
+}
 /* NAVBAR ITEM PROPERTIES */
+.nav-item{
+  width: 100%;
+}
 .nav-link {
-  text-align: center;
-  font-family: 'Big Shoulders Stencil Display', cursive;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  font-family: 'Big Shoulders Stencil Display', cursive; /*This stuff can be moved to root, TODO*/
   font-size: 30px; !important
   font-size: 1vw;
   color: #DE8F00;
-  margin-left: fill;
-  margin-right: fill;
-  margin-top: 34px;
-  margin-bottom: 34px;
+  text-decoration: none;
+
+}
+.link-text{
+  display: none;
+  margin-left: 1rem;
 }
 
+.nav-link svg{
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: #FFC253;
+  color: black;
+
+}
 /* ACTIVE NAV ITEM PROPERTIES */
-.active {
-  color: #FFC253;
+.navbar:hover {
+  width: 8rem;
 }
-
+.navbar:hover .link-text {
+  display: block;
+}
 .search-bar-border {
   border: medium black;
+}
+/* Small screens, so it is resized on mobile/tiny screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
 }
