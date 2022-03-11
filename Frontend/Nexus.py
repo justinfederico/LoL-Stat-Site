@@ -11,5 +11,21 @@ def home():
 def admin():
     return redirect(url_for("/"))
 
+@app.route("/champions")
+def champions():
+    return redirect(url_for("/"))
+
+@app.route("/login")
+def login():
+    return redirect(url_for("/"))
+
+@app.route("/about")
+def about():
+    return redirect(url_for("/"))
+
+@app.route("/support")
+def support():
+    return redirect(url_for("/"))
+
 if __name__ == "__main__":
     app.run(debug=True)
