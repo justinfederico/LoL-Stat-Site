@@ -57,7 +57,7 @@ This will actually do something once the logo is a vector graphic, couldn't find
 }
 
 /* NAVBAR ITEM CONTAINER */
-.navbar{/* Defining paramters of sidebar, and how it appears to user */
+.navbar{/* Defining parameters of sidebar, and how it appears to user */
   width: 5rem;
   height: 100vh;
   position: fixed;
