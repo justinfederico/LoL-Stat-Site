@@ -57,7 +57,7 @@ This will actually do something once the logo is a vector graphic, couldn't find
 }
 
 /* NAVBAR ITEM CONTAINER */
-.navbar{/* Defining paramters of sidebar, and how it appears to user */
+.navbar{/* Defining parameters of sidebar, and how it appears to user */
   width: 5rem;
   height: 100vh;
   position: fixed;
@@ -78,6 +78,7 @@ This will actually do something once the logo is a vector graphic, couldn't find
 .nav-item:last-child{
   margin-top: auto;
 }
+
 /* NAVBAR ITEM PROPERTIES */
 .nav-item{
   width: 100%;
@@ -109,6 +110,7 @@ This will actually do something once the logo is a vector graphic, couldn't find
   color: black;
 
 }
+
 /* ACTIVE NAV ITEM PROPERTIES */
 .navbar:hover {
   width: 8rem;
@@ -119,6 +121,7 @@ This will actually do something once the logo is a vector graphic, couldn't find
 .search-bar-border {
   border: medium black;
 }
+
 /* Small screens, so it is resized on mobile/tiny screens */
 @media only screen and (max-width: 600px) {
   .navbar {
