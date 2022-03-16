@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,11 +29,7 @@
     <!-- Big Shoulders Stencil Display: Light 300 -->
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap" rel="stylesheet">
 </head>
-
-<body class="elements">
-    <div class="page-holder bg-cover">
-
-        <!-- HOMEPAGE LEFT-SIDE NAVBAR -->
+<!-- HOMEPAGE LEFT-SIDE NAVBAR -->
         <div class="container-fluid">
             <div class="row">
                 <nav class="navbar">
@@ -43,15 +40,15 @@
                     </a>
                     <!-- NAVBAR ITEMS -->
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">
+                                <a class="nav-link active" href={{url_for('home')}}>
                                     <ion-icon name="planet"></ion-icon>
                                    <span class="link-text">HOME</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <ion-icon name="key"></ion-icon>
-                                    <span class="link-text">LOGIN</span>
+                                <a class="nav-link" href={{url_for('lookup')}}>
+                                    <ion-icon name="search"></ion-icon>
+                                    <span class="link-text" role="button">SUMMONER LOOKUP</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -76,6 +73,11 @@
                 </nav>
             </div>
         </div>
+<body class="elements">
+
+    <div class="page-holder bg-cover">
+
+
 
         <!-- WEBSITE TITLE -->
         <section class="website-name-header">
@@ -85,17 +87,7 @@
         </section>
 
         <!-- SEARCH BAR -->
-        <!--
-        <form action="/action_page.php">
-            <div class="align-content-center">
-                <div class="input-group rounded-pill">
-                    <span class="border border-2">
-                        <input type="search" class="form-control rounded-pill" placeholder="SEARCH FOR SUMMONER...">
-                    </span>
-                </div>
-            </div>
-        </form>
-        -->
+
 
     </div>
 
