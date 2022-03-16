@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>ABOUT US</title>
+    <title>LEAGUE STAT TRACKER</title>
 
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -21,8 +21,8 @@
 
     <!-- Main CSS Reference Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
-    <!-- About Us Reference Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/aboutus.css')}}">
+    <!-- Support Reference Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/support.css')}}">
 
     <!-- Connect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +54,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href={{url_for('lookup')}}>
                             <ion-icon name="search"></ion-icon>
-                            <span class="link-text" role="button">SUMMONER SEARCH</span>
+                            <span class="link-text">SUMMONER SEARCH</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -64,13 +64,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{url_for('about')}}">
+                        <a class="nav-link" href="{{url_for('about')}}">
                             <ion-icon name="contacts"></ion-icon>
                             <span class="link-text" role="button">ABOUT US</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('support')}}">
+                        <a class="nav-link active" href="{{url_for('support')}}">
                             <ion-icon name="cog"></ion-icon>
                             <span class="link-text">SUPPORT</span>
                         </a>
@@ -87,11 +87,11 @@
         </header>
         <hr class="one">
     </div>
-
     <!-- INSTALL BOOTSTRAP BUNDLE W/ POPPER -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- INSTALL IONICONS PACKAGE FOR ICONS -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
+
 
 </html>

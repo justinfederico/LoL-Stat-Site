@@ -1,39 +1,53 @@
-/*
-  === WEBPAGE CONTAINER===
-*/
-:root{ /*This is so that certain fonts/parameters are used universally throughout the site*/
+/* ===================================================================================================================
+  PROVIDING SUPPORT FOR HTML ON CERTAIN BROWSERS
+ =================================================================================================================== */
+
+/* ALLOW STICKY PROPERTY FOR SAFARI USERS */
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+	.sidebar-sticky {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+}
+
+/* ===================================================================================================================
+  BEGIN STYLING
+ =================================================================================================================== */
+
+/* Small screens, so it is resized on mobile/tiny screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .logo {
+    display: none;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  main {
+    margin: 0;
+  }
+}
+
+
+/* This is so that certain fonts/parameters are used universally throughout the site */
+:root{
   font-family: 'Big Shoulders Stencil Display', cursive;
   font-size: 30px;
 }
-main{ /*Since I didn't use bootstrap, I manually set margins and such to create the navbar object*/
-  margin-left: 5rem;
-  padding: 1rem;
-}
-body { /*Going to be straight here, don't know why the 'body' tag only changes the titles color*/
-  color: grey;
+/* Since I didn't use bootstrap, I manually set margins and such to create the navbar object */
+main{
+  margin-left: 10rem;
+  margin-right: 5rem;
 }
 
-.page-holder {
-  min-height: 100vh;
-  min-width: 100vh;
-}
-
-/*
-  === WEBPAGE BACKGROUND COLOR ===
-*/
-.bg-cover {
-  background-size: cover !important;
-  background: linear-gradient(100deg, #393939, #161616) white;
-}
-
-/*
-  === NAVBAR BACKGROUND PROPERTIES ===
-*/
-
-/*
-  === SCROLLBAR PROPERTIES ===
-  Add styling to scrollbar
-*/
+/* Scrollbar Properties */
 body::-webkit-scrollbar{
   width: 0.35rem;
 }
@@ -44,20 +58,55 @@ body::-webkit-scrollbar-thumb{
   background: #DE8F00;
 }
 
-/*
-  ALLOW STICKY PROPERTY FOR SAFARI USERS
-*/
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-	.sidebar-sticky {
-		position: -webkit-sticky;
-		position: sticky;
-	}
+
+/* ===================================================================================================================
+  WEBPAGE CONTAINER STYLING
+ =================================================================================================================== */
+
+/* Header Container Properties */
+.website-name-header {
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  margin-left: 180px;
 }
 
-/*
-  === LOGO PROPERTIES ===
-  This will actually do something once the logo is a vector graphic, couldn't find one to use
-*/
+/* Header Text Properties */
+.website-name-header a {
+  color: #DE8F00;
+  text-decoration: none;
+  text-align: center;
+  padding: 40px;
+  font-family: 'Saira Stencil One', cursive;
+  font-size: 75px;
+  line-height: 140px;
+}
+
+/* HR One Properties (Underneath Title of Page) */
+hr.one {
+  margin-top: 0px;
+  margin-left: 240px;
+  margin-right: 50px;
+  height: 5px;
+  border-width: 0px;
+  color: black;
+  background-color: black;
+}
+
+/* Webpage Background Color */
+.page-holder {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-size: cover !important;
+  background-image: linear-gradient(110deg, #393939, #161616);
+}
+
+
+/* ===================================================================================================================
+  NAVBAR CONTAINER STYLING
+ =================================================================================================================== */
+
+/* Navbar Logo Properties */
 .navbar-brand {
   font-weight: bold;
   text-transform: uppercase;
@@ -68,11 +117,9 @@ body::-webkit-scrollbar-thumb{
   width: 100%;
 }
 
-/*
-  === NAVBAR ITEM CONTAINER ===
-*/
-.navbar{ /* Defining parameters of sidebar, and how it appears to user */
-  width: 5rem;
+/* Defining Parameters of Navbar */
+.navbar{
+  width: 6rem;
   height: 100vh;
   position: fixed;
   background-color: #161616;
@@ -93,25 +140,30 @@ body::-webkit-scrollbar-thumb{
   margin-top: auto;
 }
 
-/* NAVBAR ITEM PROPERTIES */
+/* Navbar Item Properties */
 .nav-item{
   width: 100%;
 }
 
+/* General Navbar Link Properties */
 .nav-link {
   display: flex;
   align-items: center;
   height: 5rem;
-  font-family: 'Big Shoulders Stencil Display', cursive; /*This stuff can be moved to root, TODO*/
-  font-size: 30px; !important
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-size: 32px; !important
   font-size: 1vw;
   color: #DE8F00;
   text-decoration: none;
 }
-
 .link-text{
   display: none;
   margin-left: 1rem;
+}
+
+/* Active Navbar Link Properties */
+.nav-link.active {
+  color: #933A16;
 }
 
 .nav-link svg{
@@ -120,45 +172,15 @@ body::-webkit-scrollbar-thumb{
   margin: 0 1.5rem;
 }
 
+/* Navbar Link Hover Properties */
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: #FFC253;
-  color: black;
+  background: rgba(169, 169, 169, .2); /* Set background color to dark gray with 20% opacity */
+  color: #DE8F00;
 }
-
 .navbar:hover {
   width: 8rem;
 }
-
 .navbar:hover .link-text {
   display: block;
-}
-
-.search-bar-border {
-  border: medium black;
-}
-
-/* Small screens, so it is resized on mobile/tiny screens */
-@media only screen and (max-width: 600px) {
-  .navbar {
-    bottom: 0;
-    width: 100vw;
-    height: 5rem;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .nav-link {
-    justify-content: center;
-  }
-
-  main {
-    margin: 0;
-  }
 }
