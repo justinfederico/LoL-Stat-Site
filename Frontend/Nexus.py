@@ -7,6 +7,10 @@ app = Flask(__name__)
 def logoclick():
     return render_template("index.html")
 
+@app.route("/", methods=["POST", "GET"])
+def home():
+    return render_template("index.html")
+
 @app.route("/home", methods=["POST", "GET"])
 def home():
     return render_template("index.html")
