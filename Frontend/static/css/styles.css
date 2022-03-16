@@ -1,4 +1,6 @@
-/* WEBPAGE CONTAINER */
+/*
+  === WEBPAGE CONTAINER===
+*/
 :root{ /*This is so that certain fonts/parameters are used universally throughout the site*/
   font-family: 'Big Shoulders Stencil Display', cursive;
   font-size: 30px;
@@ -16,17 +18,22 @@ body { /*Going to be straight here, don't know why the 'body' tag only changes t
   min-width: 100vh;
 }
 
-/* WEBPAGE BACKGROUND COLOR*/
+/*
+  === WEBPAGE BACKGROUND COLOR ===
+*/
 .bg-cover {
   background-size: cover !important;
   background: linear-gradient(100deg, #393939, #161616) white;
 }
 
-/* NAVBAR BACKGROUND PROPERTIES
+/*
+  === NAVBAR BACKGROUND PROPERTIES ===
 */
 
-/* SCROLLBAR PROPERTIES
- this is just to make the scrollbar pretty :)*/
+/*
+  === SCROLLBAR PROPERTIES ===
+  Add styling to scrollbar
+*/
 body::-webkit-scrollbar{
   width: 0.35rem;
 }
@@ -36,7 +43,10 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
   background: #DE8F00;
 }
-/* ALLOW STICKY PROPERTY FOR SAFARI USERS */
+
+/*
+  ALLOW STICKY PROPERTY FOR SAFARI USERS
+*/
 @supports ((position: -webkit-sticky) or (position: sticky)) {
 	.sidebar-sticky {
 		position: -webkit-sticky;
@@ -44,8 +54,10 @@ body::-webkit-scrollbar-thumb{
 	}
 }
 
-/* LOGO PROPERTIES
-This will actually do something once the logo is a vector graphic, couldn't find one to use*/
+/*
+  === LOGO PROPERTIES ===
+  This will actually do something once the logo is a vector graphic, couldn't find one to use
+*/
 .navbar-brand {
   font-weight: bold;
   text-transform: uppercase;
@@ -56,8 +68,10 @@ This will actually do something once the logo is a vector graphic, couldn't find
   width: 100%;
 }
 
-/* NAVBAR ITEM CONTAINER */
-.navbar{/* Defining parameters of sidebar, and how it appears to user */
+/*
+  === NAVBAR ITEM CONTAINER ===
+*/
+.navbar{ /* Defining parameters of sidebar, and how it appears to user */
   width: 5rem;
   height: 100vh;
   position: fixed;
@@ -83,6 +97,7 @@ This will actually do something once the logo is a vector graphic, couldn't find
 .nav-item{
   width: 100%;
 }
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -92,8 +107,8 @@ This will actually do something once the logo is a vector graphic, couldn't find
   font-size: 1vw;
   color: #DE8F00;
   text-decoration: none;
-
 }
+
 .link-text{
   display: none;
   margin-left: 1rem;
@@ -104,19 +119,21 @@ This will actually do something once the logo is a vector graphic, couldn't find
   min-width: 2rem;
   margin: 0 1.5rem;
 }
+
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
   background: #FFC253;
   color: black;
 }
 
-/* ACTIVE NAV ITEM PROPERTIES */
 .navbar:hover {
   width: 8rem;
 }
+
 .navbar:hover .link-text {
   display: block;
 }
+
 .search-bar-border {
   border: medium black;
 }
