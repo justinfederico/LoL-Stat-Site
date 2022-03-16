@@ -15,9 +15,9 @@ def admin():
 def champions():
     return redirect(url_for("/"))
 
-@app.route("/login")
-def login():
-    return redirect(url_for("/"))
+@app.route("/lookup", methods=["POST", "GET"])
+def lookup():
+    return render_template("summonerSearch.html")
 
 @app.route("/about")
 def about():
