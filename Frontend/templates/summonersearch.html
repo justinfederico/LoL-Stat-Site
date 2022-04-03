@@ -86,36 +86,24 @@
             <a href="#" class="webpage-title">LEAGUE OF LEGENDS STATISTICS TRACKER</a>
         </header>
         <hr class="one">
-       <div>
-           <div class="search-box" id="frontpage-search-box">
-            <form action="/search" class="search">
-                <div class="btn-group">
-                    <input type="hidden" name="region" value="na">
-                    <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <span>NA</span>
-                 </button>
-            <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#" data-region="br">BR</a>
-                                    <a class="dropdown-item" href="#" data-region="eune">EUNE</a>
-                                    <a class="dropdown-item" href="#" data-region="euw">EUW</a>
-                                    <a class="dropdown-item" href="#" data-region="jp">JP</a>
-                                    <a class="dropdown-item" href="#" data-region="kr">KR</a>
-                                    <a class="dropdown-item" href="#" data-region="lan">LAN</a>
-                                    <a class="dropdown-item" href="#" data-region="las">LAS</a>
-                                    <a class="dropdown-item" href="#" data-region="na">NA</a>
-                                    <a class="dropdown-item" href="#" data-region="oce">OCE</a>
-                                    <a class="dropdown-item" href="#" data-region="tr">TR</a>
-                                    <a class="dropdown-item" href="#" data-region="ru">RU</a>
-                            </div>
-        </div>
-        <input type="text" name="name" value="" maxlength="30" required="" placeholder="Search Summoner Name">
-        <button type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-    </form>
-</div>
-            </div>
 
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
+<!-- SEARCH BAR -->
+<div class="wrapper">
+    <div class="searchbox">
+      <input type="text" class="input" id="id_input">
+      <div class="btn" id="id_btn"><i class="fas fa-search"></i></div>
+    </div>
+</div>
+<script>
+    var btn = document.getElementById("id_btn");
+    var input = document.getElementById("id_input");
+    btn.addEventListener("click", function(){
+        this.classList.toggle("btn_active"); //just toggles button in HTML between covered and not covered
+        input.classList.toggle("input_active"); //controls whether user can type or not
+    });
+</script>
+</div>
 
     </div>
     <!-- INSTALL BOOTSTRAP BUNDLE W/ POPPER -->
