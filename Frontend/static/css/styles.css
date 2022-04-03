@@ -184,3 +184,24 @@ hr.one {
 .navbar:hover .link-text {
   display: block;
 }
+/*Search Bar*/
+input {
+	font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 28px;
+    width: auto;
+}
+
+.search-box{
+    position: relative;
+    margin-left: 28rem;
+    background: #FFC253;
+    width: 18rem;
+}
+
+.dropdown-menu{
+  size: auto;
+}
+
+.button{
+
+}
