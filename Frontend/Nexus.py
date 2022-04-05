@@ -1,10 +1,11 @@
-from flask import Flask, redirect, url_for, render_template
-import cassiopeia as cass
+from flask import Flask, redirect, url_for, render_template, request
+import globals
 
 app = Flask(__name__)
 app.config['RIOT_API_KEY'] = 'RGAPI-33d11744-54bf-40fd-b34c-cf42d5f2b21b'
 
-summonerGold = []
+
+
 
 # Defining routes for the site, directing the user to the desired page
 @app.route("/logoclick", methods=["POST", "GET"])
@@ -29,7 +30,16 @@ def champions():
 
 @app.route("/lookup", methods=["POST", "GET"])
 def lookup():
-    return render_template("summonersearch.html")
+    if request.method == "POST":
+        summonerID = request.form["nm"]
+        return redirect(url_for("datadisplay", summoner=summonerID))
+    else:
+        return render_template("summonersearch.html")
+
+
+@app.route("/display/<summoner>", methods=["POST", "GET"])
+def datadisplay(summoner):
+    return render_template("dataDisplay.html")
 
 
 @app.route("/about", methods=["POST", "GET"])
