@@ -1,8 +1,3 @@
-//Update Search Bar Dropdown Option and animate click
-var btn = document.getElementById("btn");
-var input = document.getElementById("input");
+//Update Search Bar Dropdown Option and animate click, this code is redundant, embedded on summonersearch
 
-btn.addEventListener("click", function(){
-   this.classList.toggle("btn_active");
-   input.classList.toggle("input_active");
-})
+

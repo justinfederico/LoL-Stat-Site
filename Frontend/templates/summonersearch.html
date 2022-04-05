@@ -91,8 +91,11 @@
 <!-- SEARCH BAR -->
 <div class="wrapper">
     <div class="searchbox">
-      <input type="text" class="input" id="id_input">
-      <div class="btn" id="id_btn"><i class="fas fa-search"></i></div>
+        <form action="#" method="post">
+            <input type="text" name="nm" class="input" id="id_input">
+            <div class="btn" id="id_btn"><i class="fas fa-search"></i></div>
+        </form>
+
     </div>
 </div>
 <script>
@@ -102,6 +105,17 @@
         this.classList.toggle("btn_active"); //just toggles button in HTML between covered and not covered
         input.classList.toggle("input_active"); //controls whether user can type or not
     });
+    //Detect enter being hit, apparantly most modern way of doing it
+    //function inputValueSumm()
+    //{
+    //var summonerID = document.getElementById("id_input").value;
+    //return summonerID;
+    //};
+    //document.addEventListener('keypress', function (e) {
+    //if (e.key === 'Enter') {
+      //inputValueSumm();
+    //}
+//});
 </script>
 </div>
 
