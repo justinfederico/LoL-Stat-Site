@@ -37,7 +37,7 @@
 <body class="elements">
     <!-- HOMEPAGE LEFT-SIDE NAVBAR -->
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="left-navbar">
             <nav class="navbar">
                 <ul class="navbar-nav">
                 <!-- LOGO/BRAND PLACEMENT -->
@@ -86,8 +86,44 @@
             <a href="index.html" class="webpage-title">LEAGUE OF LEGENDS STATISTICS TRACKER</a>
         </header>
         <hr class="one">
-    </div>
+        <h1 style="text-align: center" id="aboutus-header">ABOUT US</h1>
 
+        <!-- ABOUT US CARDS -->
+        <div class="d-flex align-items-center justify-content-center" id="aboutus-container">
+            <div class="row" id="cardholders">
+                <!-- JAREL'S CARD INFO -->
+                <div class="col">
+                    <div class="card">
+                        <div class="mx-auto">
+                            <img src="{{url_for('static', filename='jarel-aboutus.jpg')}}" alt="Jarel" id="cardimg1">
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-name">JAREL MACANAS</h2>
+                            <p class="card-title">> FRONTEND DESIGNER <</p>
+                            <p class="card-text"><span>I am currently a fourth-year Computer Engineering Student at San Diego State University. This semester kinda got me wrecked but I graduate after this so all is well.<br><br>
+                                For this project, my job was mostly working on the frontend development of our website, additionally helping out with the backend and API when possible.<br><br>
+                                Much of the work I've done has gone into creating the base page of our website as well as the several containers that display much of the data taken from RIOT GAMES' API.<br><br>
+                                Basically, I made the website look as appealing to our users as possible. I'm no artist, but damn. Maybe I should've been.
+                            </span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- JUSTIN'S CARD INFO -->
+                <div class="col">
+                    <div class="card">
+                        <div class="mx-auto">
+                            <img src="{{url_for('static', filename='justin-aboutus.jpg')}}" alt="Justin" id="cardimg2">
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-name">JUSTIN FEDERICO</h2>
+                            <p class="card-title">> BACKEND DESIGNER <</p>
+                            <p class="card-text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi blanditiis, corporis distinctio eligendi harum laboriosam mollitia odit perferendis praesentium provident quae quisquam quod suscipit tempora, tenetur, unde veniam vitae?</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- INSTALL BOOTSTRAP BUNDLE W/ POPPER -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
