@@ -1,3 +1,3 @@
-def initialize():
-    global summonerID
-    summonerID = None
+def init():
+    global summoner
+    summoner = ''

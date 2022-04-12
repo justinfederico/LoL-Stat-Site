@@ -3,7 +3,7 @@ import globals
 
 app = Flask(__name__)
 app.config['RIOT_API_KEY'] = 'RGAPI-33d11744-54bf-40fd-b34c-cf42d5f2b21b'
-
+globals.init()
 
 
 
@@ -31,8 +31,8 @@ def champions():
 @app.route("/lookup", methods=["POST", "GET"])
 def lookup():
     if request.method == "POST":
-        summonerID = request.form["nm"]
-        return redirect(url_for("datadisplay", summoner=summonerID))
+        summoner = request.form["nm"]
+        return redirect(url_for("datadisplay", summoner=summoner))
     else:
         return render_template("summonersearch.html")
 
