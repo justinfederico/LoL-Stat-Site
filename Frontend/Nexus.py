@@ -2,7 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request
 import globals
 
 app = Flask(__name__)
-app.config['RIOT_API_KEY'] = 'RGAPI-33d11744-54bf-40fd-b34c-cf42d5f2b21b'
+app.config['RIOT_API_KEY'] = 'RGAPI-a785b4bd-e97a-4388-ad81-4af7f2e7c4e6'
 globals.init()
 
 
