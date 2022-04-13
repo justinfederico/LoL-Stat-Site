@@ -2,9 +2,8 @@ from flask import Flask, redirect, url_for, render_template, request
 import globals
 
 app = Flask(__name__)
-app.config['RIOT_API_KEY'] = 'RGAPI-33d11744-54bf-40fd-b34c-cf42d5f2b21b'
+app.config['RIOT_API_KEY'] = 'RGAPI-e9b2b885-07ce-4637-904e-4dd3e208fc90'
 globals.init()
-
 
 
 # Defining routes for the site, directing the user to the desired page
