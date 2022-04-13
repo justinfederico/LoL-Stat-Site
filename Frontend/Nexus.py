@@ -6,7 +6,6 @@ app.config['RIOT_API_KEY'] = 'RGAPI-e9b2b885-07ce-4637-904e-4dd3e208fc90'
 globals.init()
 
 
-
 # Defining routes for the site, directing the user to the desired page
 @app.route("/logoclick", methods=["POST", "GET"])
 def logoclick():
