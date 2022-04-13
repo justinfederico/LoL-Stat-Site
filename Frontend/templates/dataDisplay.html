@@ -46,13 +46,13 @@
                 </a>
                 <!-- NAVBAR ITEMS -->
                     <li class="nav-item">
-                        <a class="nav-link active" href={{url_for('default')}}>
+                        <a class="nav-link" href={{url_for('default')}}>
                             <ion-icon name="planet"></ion-icon>
                            <span class="link-text">HOME</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href={{url_for('lookup')}}>
+                        <a class="nav-link active" href={{url_for('lookup')}}>
                             <ion-icon name="search"></ion-icon>
                             <span class="link-text" role="button">SUMMONER SEARCH</span>
                         </a>
@@ -86,8 +86,230 @@
             <a href="index.html" class="webpage-title">LEAGUE OF LEGENDS STATISTICS TRACKER</a>
         </header>
         <hr class="one">
-        <div class="d-flex align-items-center justify-content-center" id="match-container">
+        <h1 style="text-align: center" id="match-header">MATCH HISTORY</h1>
 
+        <!-- MATCH CONTAINERS -->
+        <div class="d-flex align-items-center justify-content-center" id="match-list-container">
+            <!-- SPECIFIES UNORDERED LIST OF MATCHES -->
+            <ul id="match-list" class="flex-column">
+                <!-- ONE MATCH -->
+                <li class="d-flex flex-row" id="match-statistics">
+                    <!-- MATCH INFO -->
+                    <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-info">
+                        <div class="d-flex" id="game-type">
+                            NORMAL
+                        </div>
+                        <div class="timestamp">
+                            2 DAYS AGO
+                        </div>
+                        <div class="d-flex" id="bar"></div>
+                        <div class="d-flex" id="game-result">
+                            LOSS
+                        </div>
+                        <div class="d-flex" id="game-time">
+                            24:57
+                        </div>
+                    </div>
+                    <!-- MATCH CHAMPION -->
+                    <div class="d-flex flex-row flex-fill justify-content-center align-self-center" id="match-champion">
+                        <!-- CHAMPION ICON -->
+                        <div class="d-flex flex-column align-self-center" id="champion-info">
+                            <div class="d-flex justify-content-center" id="champion-icon">
+                                <img src="https://raw.communitydragon.org/12.7/game/assets/characters/ekko/hud/ekko_square.png" alt="Ekko.png" width="50px" height="50px">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                Ekko
+                            </div>
+                        </div>
+                        <!-- RUNE ICONS -->
+                        <div class="d-flex flex-column justify-content-center align-self-center" id="runes">
+                            <div class="d-flex justify-content-center" id="keystone">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/domination/darkharvest/darkharvest.png" alt="keystone-image" width="35px" height="35px">
+                            </div>
+                            <div class="d-flex justify-content-center" id="secondary-tree">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/7203_whimsy.png" alt="secondary-tree-image" width="35px" height="35px">
+                            </div>
+                        </div>
+                        <!-- SPELL ICONS -->
+                        <div class="d-flex flex-column align-self-center" id="spells">
+                            <div class="d-flex justify-content-center" id="spell-one">
+                                <img src="https://raw.communitydragon.org/12.7/game/assets/spells/icons2d/summoner_teleport.png" alt="summoner-spell-one" width="35px" height="35px">
+                            </div>
+                            <div class="d-flex justify-content-center" id="spell-two">
+                                <img src="https://raw.communitydragon.org/12.7/game/assets/spells/icons2d/summoner_smite.png" alt="summoner-spell-two" width="35px" height="35px">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MATCH KDA -->
+                    <div class="d-flex flex-column flex-fill align-items-center align-self-center" id="match-kda">
+                        <!-- SUMMONER KDA -->
+                        <div class="d-flex" id="summoner-kda">
+                            <span>4</span>
+                            &nbsp|&nbsp
+                            <span class="deaths">5</span>
+                            &nbsp|&nbsp
+                            <span>13</span>
+                        </div>
+                    </div>
+                    <!-- MATCH BASIC STATS -->
+                    <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-basic-stats">
+                        <!-- SUMMONER LEVEL -->
+                        <div class="d-flex" id="summoner-level">
+                            Level 213
+                        </div>
+                        <!-- SUMMONER CS AVERAGE -->
+                        <div class="d-flex" id="summoner-cs">
+                            113 CS Total | 3.4 CS/min
+                        </div>
+                        <!-- KILL PARTICIPATION -->
+                        <div class="d-flex" id="summoner-kp">
+                            Kill Participation | 30.4%
+                        </div>
+                        <!-- MMR AVERAGE -->
+                        <div class="d-flex" id="match-mmr-average">
+                            MMR Average | Gold 2
+                        </div>
+                    </div>
+                    <!-- MATCH ITEMS -->
+                    <div class="d-flex flex-fill justify-content-center align-self-center" id="match-items">
+                        <ul class="d-flex flex-row flex-wrap" id="items-container">
+                            <li class="item">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
+                            </li>
+                            <li class="item">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
+                            </li>
+                            <li class="item">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
+                            </li>
+                            <li class="item">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
+                            </li>
+                            <li class="item">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
+                            </li>
+                            <li class="item">
+                                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- MATCH PLAYERS -->
+                    <div class="d-flex flex-fill justify-content-center align-self-center" id="match-players">
+                        <!-- TEAM ONE -->
+                        <ul class="d-flex flex-column" id="player-list-one">
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- TEAM TWO -->
+                        <ul class="d-flex flex-column" id="player-list-two">
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="player-item">
+                                <div class="d-flex flex-row">
+                                    <div class="player-champion-icon">
+                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                    </div>
+                                    <div class="player-name text-truncate align-self-center justify-content-center">
+                                        Player Nameasdfsadf
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex" id="expand-stats">
+                        <button class="expand-stats-button">
+
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
         </div>
     </div>
 

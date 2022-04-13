@@ -1,5 +1,132 @@
-#match-container {
-    height: 350px;
-    margin: 0px 0px 0px 180px;
-    width: 400px;
+#match-header {
+    margin: 30px 20px 30px 200px;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-weight: bold;
+    padding: 25px;
+}
+
+/* Set some default unordered list and list item properties */
+ul {
+    list-style: none; !important;
+    display: block;
+    padding: unset;
+}
+
+li {
+    list-style-type: none; !important;
+}
+
+#match-list-container {
+    display: inline-block;
+    margin: 0px 20px 0px 200px;
+    padding: unset;
+}
+
+#match-list {
+    margin-top: 15px;
+    font-family: Azonix;
+    font-weight: lighter;
+    font-size: 15px;
+    font-color: #161616;
+    color: #DE8F00;
+}
+
+#match-statistics {
+    position: relative;
+    width: 1500px;
+    max-height: 150px;
+    margin-bottom: 15px;
+    border: 1px solid #161616;
+    background: linear-gradient(70deg, rgba(22, 22, 22, 0.9), rgba(50, 50, 50, 0.8) 70.71%);
+}
+
+/* MATCH INFO SECTION */
+#match-info {
+    padding: 7px;
+    max-width: 200px;
+}
+
+/* CHAMPIONS SECTION */
+#match-champion {
+    padding: 7px;
+    max-width: 275px;
+}
+#champion-info {
+    padding-right: 7px;
+}
+#champion-icon {
+    margin-bottom: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#runes {
+    margin: 0px 2px 0px 4px;
+}
+#keystone {
+    margin-bottom: 3px;
+}
+#secondary-tree {
+    width: 35px;
+    height: 35px;
+}
+#spells {
+    margin: 0px 2px;
+}
+#spell-one {
+    margin-bottom: 3px;
+    border-radius: 10%;
+    overflow: hidden;
+}
+#spell-two {
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+/* KDA SECTION */
+#match-kda {
+    padding: 7px;
+}
+
+/* BASIC STATS SECTION */
+#match-basic-stats {
+    padding: 7px;
+}
+
+/* ITEMS SECTION */
+#match-items {
+    padding: 7px;
+    max-width: 150px;
+}
+.item {
+    margin: 2px;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+/* PLAYERS SECTION */
+#match-players {
+    padding: 7px;
+}
+#player-list-one {
+    max-width: 120px;
+    white-space: nowrap;
+    margin-right: 4px;
+}
+.player-name {
+    font-size: 10px;
+    max-width: 110px;
+    padding-left: 3px;
+}
+
+/* BUTTON SECTION */
+.expand-stats {
+    position: relative;
+    width: 50px; !important;
+    height: 100%;
+}
+.expand-stats-button {
+    width: 50px;
+    height: 100%;
+    background-color: #DE8F00;
+    border-left: 3px solid black;
 }
