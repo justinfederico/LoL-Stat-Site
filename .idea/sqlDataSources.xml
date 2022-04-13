@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="beca9aa9-216d-4876-858a-6080a15174f7" name="RIOT-API-DATA.sqlite Mapping">
+      <data-sources db="654d05d0-2706-4923-a168-5d80d4b86847" ddl="68ecd187-639a-4ef6-9564-8f35e9ffb3fb" />
+      <scope>
+        <node kind="database" qname="@">
+          <node kind="schema" qname="@" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
