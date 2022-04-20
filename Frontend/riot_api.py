@@ -7,7 +7,8 @@ from sqlalchemy import create_engine
 
 
 def data_fetch(summoner):
-    engine = create_engine('sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
+    engine = create_engine(
+        'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
     lol_watcher = LolWatcher('RGAPI-ae43c690-0fcb-4ed8-8c40-a5f8f9f92ce4')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
@@ -52,15 +53,18 @@ def data_fetch(summoner):
                 summoners_dict[row['key']] = row['id']
 
                 Games[j] = pd.DataFrame(participants)
-            Games[j].to_sql('Match_Data', con=engine, if_exists='append')
 
             j += 1
             cont += 1
             print('Iteration!')
-
-    except:
+        df = pd.concat(Games)
+        print("it did concat")
+        print(df)
+        df.to_sql('matches', con=engine, if_exists='append')
+    except Exception as e:
         cont += 1
         print('Except caught')
+        print(e)
     finally:
 
         xyz = 1
