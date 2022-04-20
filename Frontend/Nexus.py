@@ -1,9 +1,43 @@
+import os
 from flask import Flask, redirect, url_for, render_template, request
-from flask_sqlalchemy import SQLAlchemy
+import riot_api
 import globals
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['RIOT_API_KEY'] = 'RGAPI-e9b2b885-07ce-4637-904e-4dd3e208fc90'
+# Add database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///matches.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Set API key for function calls
+app.config['RIOT_API_KEY'] = 'RGAPI-ae43c690-0fcb-4ed8-8c40-a5f8f9f92ce4'
+# Initialize Database
+db = SQLAlchemy(app)
+
+
+# Create Database Model
+class Matches(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    summonerName = db.Column(db.String(50))
+    championId = db.Column(db.Integer)
+    championName = db.Column(db.String(50))
+    win = db.Column(db.Integer)
+    kills = db.Column(db.Integer)
+    deaths = db.Column(db.Integer)
+    assists = db.Column(db.Integer)
+    summoner1Id = db.Column(db.Integer)
+    summoner2Id = db.Column(db.Integer)
+    item1 = db.Column(db.Integer)
+    item2 = db.Column(db.Integer)
+    item3 = db.Column(db.Integer)
+    item4 = db.Column(db.Integer)
+    item5 = db.Column(db.Integer)
+    item6 = db.Column(db.Integer)
+    totalMinionsKilled = db.Column(db.Integer)
+
+
+# Create Database
+db.create_all()
+
 globals.init()
 
 
@@ -39,6 +73,7 @@ def lookup():
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
 def datadisplay(summoner):
+    riot_api.data_fetch(summoner)
     return render_template("dataDisplay.html")
 
 
