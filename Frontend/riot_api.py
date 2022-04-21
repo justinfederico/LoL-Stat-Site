@@ -6,11 +6,13 @@ from riotwatcher import LolWatcher, ApiError
 from sqlalchemy import create_engine
 import json
 
+from Frontend.Nexus import Matches
+
 
 def data_fetch(summoner):
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
-    lol_watcher = LolWatcher('RGAPI-ae43c690-0fcb-4ed8-8c40-a5f8f9f92ce4')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-0ffe58eb-0746-422c-bb4c-b32eb7fdcdd4')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
@@ -24,7 +26,6 @@ def data_fetch(summoner):
     current_summoners_list = lol_watcher.data_dragon.summoner_spells(summoner_spells_version)
     my_matches = lol_watcher.match.matchlist_by_puuid('americas',
                                                       me['puuid'])  # this guy right here is the problem child
-
     j = 0
     cont = 0
     try:
@@ -58,10 +59,13 @@ def data_fetch(summoner):
             j += 1
             cont += 1
             print('Iteration!')
+        # Concatenate dataframes into one large dataframe
         df = pd.concat(Games)
-        print("it did concat")
-        print(df)
+        # print(df)
+        # Convert Pandas Dataframe to SQL Table
         df.to_sql('matches', con=engine, if_exists='append')
+
+
     except Exception as e:
         cont += 1
         print('Except caught')
@@ -69,6 +73,31 @@ def data_fetch(summoner):
     finally:
 
         xyz = 1
+
+
+def data_process():
+    # Assign data from first match in DB to match_1
+    match_1 = Matches.query.filter(Matches.level_0 == 0).all()
+    # print(match_1[0:3])
+    # m1 = {}
+    # k = 0
+    # for row in match_1:
+    #     key = match_1.[0:k]
+    #     kda = {match_1.Matches.kills, match_1.Matches.assists, match_1.Matches.deaths}
+    #     m1[key] = kda
+    #     k += 1
+    #     print(m1)
+    # Assign data from first match in DB to match_2
+    match_2 = Matches.query.filter(Matches.level_0 == 1).all()
+
+    # Assign data from first match in DB to match_3
+    match_3 = Matches.query.filter(Matches.level_0 == 2).all()
+
+    # Assign data from first match in DB to match_4
+    match_4 = Matches.query.filter(Matches.level_0 == 3).all()
+
+    # Assign data from first match in DB to match_5
+    match_5 = Matches.query.filter(Matches.level_0 == 4).all()
 
 
 def asset_fetch():

@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///matches.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Set API key for function calls
-app.config['RIOT_API_KEY'] = 'RGAPI-ae43c690-0fcb-4ed8-8c40-a5f8f9f92ce4'
+app.config['RIOT_API_KEY'] = 'RGAPI-0ffe58eb-0746-422c-bb4c-b32eb7fdcdd4'
 # Initialize Database
 db = SQLAlchemy(app)
 
@@ -33,6 +33,10 @@ class Matches(db.Model):
     item5 = db.Column(db.BIGINT)
     item6 = db.Column(db.BIGINT)
     totalMinionsKilled = db.Column(db.Integer)
+
+    __table_args__ = (
+        db.PrimaryKeyConstraint("level_0", "level_1"),
+    )
 
 
 # Create Database
@@ -75,6 +79,8 @@ def lookup():
 @app.route("/display/<summoner>", methods=["POST", "GET"])
 def datadisplay(summoner):
     riot_api.data_fetch(summoner)
+    riot_api.data_process()
+
     return render_template("dataDisplay.html")
 
 
