@@ -33,14 +33,18 @@ def data_fetch(summoner):
             match_detail = lol_watcher.match.by_id('americas', my_matches[j])
             participants = []
             for row in match_detail['info']['participants']:
-                participants_row = {'summonerName': row['summonerName'], 'champion': row['championId'],
+                participants_row = {'summonerName': row['summonerName'], 'summonerLevel': row['summonerLevel'],
+                                    'champion': row['championId'],
                                     'championName': row['championName'], 'win': row['win'],
                                     'kills': row['kills'], 'deaths': row['deaths'], 'assists': row['assists'],
                                     'summoner1Id': row['summoner1Id'],
                                     'summoner2Id': row['summoner2Id'],
                                     'item1': row['item1'], 'item2': row['item2'], 'item3': row['item3'],
                                     'item4': row['item4'], 'item5': row['item5'], 'item6': row['item6'],
-                                    'totalMinionsKilled': row['totalMinionsKilled']}
+                                    'totalMinionsKilled': row['totalMinionsKilled'],
+                                    'visionWardsBoughtInGame': row['visionWardsBoughtInGame'],
+                                    'visionScore': row['visionScore'], 'totalDamageDealt': row['totalDamageDealt'],
+                                    'totalDamageDealtToChampions': row['totalDamageDealtToChampions']}
                 participants.append(participants_row)
                 Games[j] = pd.DataFrame(participants)
 
