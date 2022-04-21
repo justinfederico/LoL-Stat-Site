@@ -10,32 +10,37 @@ ul {
     list-style: none; !important;
     display: block;
     padding: unset;
+    margin: unset;
 }
 
 li {
     list-style-type: none; !important;
 }
 
+/* MAIN MATCH CONTAINERS */
+#match {
+    margin-bottom: 1rem;
+}
 #match-list-container {
     display: inline-block;
-    margin: 0px 20px 0px 200px;
+    margin: 0px 20px 15px 200px;
     padding: unset;
 }
-
 #match-list {
     margin-top: 15px;
+    margin-bottom: 0px;
     font-family: Azonix;
     font-weight: lighter;
     font-size: 15px;
     font-color: #161616;
     color: #DE8F00;
 }
-
 #match-statistics {
     position: relative;
     width: 1500px;
     max-height: 150px;
-    margin-bottom: 15px;
+    overflow: hidden;
+    margin-bottom: 0px;
     border: 1px solid #161616;
     background: linear-gradient(70deg, rgba(22, 22, 22, 0.9), rgba(50, 50, 50, 0.8) 70.71%);
 }
@@ -44,6 +49,9 @@ li {
 #match-info {
     padding: 7px;
     max-width: 200px;
+}
+#game-result {
+    color: rgba(242, 0, 0, 0.8);
 }
 
 /* CHAMPIONS SECTION */
@@ -86,6 +94,16 @@ li {
 #match-kda {
     padding: 7px;
 }
+.kda-text {
+    font-size: 20px;
+    margin: 5px;
+}
+.kda-stats {
+    margin: 5px;
+}
+.deaths {
+    color: rgba(242, 0, 0, 0.8);
+}
 
 /* BASIC STATS SECTION */
 #match-basic-stats {
@@ -118,15 +136,38 @@ li {
     padding-left: 3px;
 }
 
-/* BUTTON SECTION */
-.expand-stats {
-    position: relative;
-    width: 50px; !important;
+/* BUTTON ICON */
+.expand-stats-button-icon {
+    color: whitesmoke;
     height: 100%;
 }
-.expand-stats-button {
-    width: 50px;
-    height: 100%;
-    background-color: #DE8F00;
-    border-left: 3px solid black;
+
+/* EXTENDED MATCH STATISTICS */
+#extended-match-details {
+    position: relative;
+    width: 1500px;
+    height: auto;
+    border: 1px solid #161616;
+    background: rgba(22, 22, 22, 0.9);
+}
+
+/* MATCH ANALYSIS */
+#extended-match-detail-container {
+    margin: 20px;
+}
+.team-legend {
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+.losing-team {
+    margin: 0 20px;
+}
+.winning-team {
+    margin: 0 20px;
+}
+.graphs {
+    padding: 20px;
+}
+.graph-col {
+    padding: 75px 20px;
 }
