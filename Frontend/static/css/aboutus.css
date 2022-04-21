@@ -5,10 +5,9 @@
 }
 
 #aboutus-header {
-    margin: 30px 20px 30px 200px;
+    margin: 20px 20px 20px 200px;
     font-family: 'Big Shoulders Stencil Display', cursive;
     font-weight: bold;
-    padding: 25px;
 }
 
 #cardimg1 {
@@ -28,7 +27,7 @@
     width: 25rem;
     height: 1000px;
     margin: 15px 30px;
-    background-color: rgba(149, 165, 166, 1);
+    background-color: rgba(149, 165, 166, 0.5);
     text-align: center;
     box-shadow: 8px 8px 9px 0 rgba(36, 36, 32, 0.8);
     border: 3px solid black;
@@ -36,7 +35,7 @@
 
 .card-name {
     font-family: "Saira Stencil One";
-    font-size: 50px;
+    font-size: 45px;
     color: black;
 }
 
@@ -45,13 +44,13 @@
     font-size: 25px;
     font-weight: bold;
     color: dimgrey;
-    margin: 25px 0;
+    margin-bottom: 25px;
     letter-spacing: 12px;
 }
 
 .card-text {
     font-family: Azonix;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: lighter;
     line-height: 25px;
 }
