@@ -18,6 +18,7 @@ class Matches(db.Model):
     level_0 = db.Column(db.BIGINT, primary_key=True)
     level_1 = db.Column(db.BIGINT, primary_key=True)
     summonerName = db.Column(db.TEXT)
+    summonerLevel = db.Column(db.BIGINT)
     champion = db.Column(db.BIGINT)
     championName = db.Column(db.TEXT)
     win = db.Column(db.BIGINT)
@@ -33,6 +34,10 @@ class Matches(db.Model):
     item5 = db.Column(db.BIGINT)
     item6 = db.Column(db.BIGINT)
     totalMinionsKilled = db.Column(db.Integer)
+    visionWardsBoughtInGame = db.Column(db.Integer)
+    visionScore = db.Column(db.Integer)
+    totalDamageDealt = db.Column(db.BIGINT)
+    totalDamageDealtToChampions = db.Column(db.BIGINT)
 
     __table_args__ = (
         db.PrimaryKeyConstraint("level_0", "level_1"),
