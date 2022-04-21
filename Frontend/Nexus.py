@@ -1,4 +1,3 @@
-import os
 from flask import Flask, redirect, url_for, render_template, request
 import riot_api
 import globals
@@ -37,6 +36,7 @@ class Matches(db.Model):
 
 
 # Create Database
+db.drop_all()
 db.create_all()
 
 globals.init()

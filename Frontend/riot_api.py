@@ -4,6 +4,7 @@ import pandas as pd  # love me some dataframes
 import sqlalchemy
 from riotwatcher import LolWatcher, ApiError
 from sqlalchemy import create_engine
+import json
 
 
 def data_fetch(summoner):
