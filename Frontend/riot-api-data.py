@@ -3,7 +3,6 @@ import time
 import pandas as pd  # if SQL was based
 from riotwatcher import LolWatcher, ApiError
 import sqlite3 as sql
-import sqlalchemy
 
 conn = sql.connect('RIOT-API-DATA.sqlite')
 
