@@ -12,7 +12,7 @@ from Frontend.Nexus import Matches
 def data_fetch(summoner):
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
-    lol_watcher = LolWatcher('RGAPI-0ffe58eb-0746-422c-bb4c-b32eb7fdcdd4')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-081c4b01-31a9-4369-a121-f2d418475c5f')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
@@ -25,15 +25,17 @@ def data_fetch(summoner):
     current_champ_list = lol_watcher.data_dragon.champions(champions_version)
     current_summoners_list = lol_watcher.data_dragon.summoner_spells(summoner_spells_version)
     my_matches = lol_watcher.match.matchlist_by_puuid('americas',
-                                                      me['puuid'])  # this guy right here is the problem child
+                                                      me['puuid'], count=5)  # this guy right here is the problem child
     j = 0
     cont = 0
     try:
         while cont < n_games:
             match_detail = lol_watcher.match.by_id('americas', my_matches[j])
             participants = []
+            print(my_matches[j])
             for row in match_detail['info']['participants']:
-                participants_row = {'summonerName': row['summonerName'], 'summonerLevel': row['summonerLevel'],
+                participants_row = {'summonerName': row['summonerName'],
+                                    'summonerLevel': row['summonerLevel'],
                                     'champion': row['championId'],
                                     'championName': row['championName'], 'win': row['win'],
                                     'kills': row['kills'], 'deaths': row['deaths'], 'assists': row['assists'],
@@ -47,7 +49,7 @@ def data_fetch(summoner):
                                     'totalDamageDealtToChampions': row['totalDamageDealtToChampions']}
                 participants.append(participants_row)
                 Games[j] = pd.DataFrame(participants)
-
+                # print(Games[j])
             champ_dict = {}
             for key in current_champ_list['data']:
                 row = current_champ_list['data'][key]

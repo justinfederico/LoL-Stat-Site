@@ -76,6 +76,7 @@ def champions():
 def lookup():
     if request.method == "POST":
         summoner = request.form["nm"]
+        db.drop_all()
         return redirect(url_for("datadisplay", summoner=summoner))
     else:
         return render_template("summonersearch.html")
