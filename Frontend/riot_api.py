@@ -12,7 +12,7 @@ from Frontend.Nexus import Matches
 def data_fetch(summoner):
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
-    lol_watcher = LolWatcher('RGAPI-081c4b01-31a9-4369-a121-f2d418475c5f')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-e72d9aaa-deee-4150-98e5-0bfeb3468fde')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
