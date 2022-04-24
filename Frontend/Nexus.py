@@ -3,6 +3,7 @@ import riot_api
 import globals
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 # Add database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///matches.db'
@@ -83,11 +84,30 @@ def lookup():
 
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
-def datadisplay(summoner):
+def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None, matches=None, count=None, match_count=None):
+    db.create_all()
     riot_api.data_fetch(summoner)
-    riot_api.data_process()
+    match_1 = Matches.query.filter(Matches.level_0 == 0).all()
+    match_2 = Matches.query.filter(Matches.level_0 == 1).all()
+    match_3 = Matches.query.filter(Matches.level_0 == 2).all()
+    match_4 = Matches.query.filter(Matches.level_0 == 3).all()
+    match_5 = Matches.query.filter(Matches.level_0 == 4).all()
+    match_list = []
+    match_list.append(match_1)
+    match_list.append(match_2)
+    match_list.append(match_3)
+    match_list.append(match_4)
+    match_list.append(match_5)
+    matches = Matches.query.all()
+    count = Matches.query.count()
+    count = int(count/10)
+    print(match_list)
 
-    return render_template("dataDisplay.html")
+
+
+
+    return render_template("dataDisplay.html", summoner=summoner, match_1=match_1, match_2=match_2, match_3=match_3,
+                           match_4=match_4, match_5=match_5, matches=matches, count=count, match_list=match_list, match_count=match_count)
 
 
 @app.route("/about", methods=["POST", "GET"])

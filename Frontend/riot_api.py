@@ -1,17 +1,20 @@
 import numpy as np
 import time
 import pandas as pd  # love me some dataframes
-import sqlalchemy
 from riotwatcher import LolWatcher, ApiError
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 import json
-
+from flask_sqlalchemy import SQLAlchemy
 from Frontend.Nexus import Matches
 
 
 def data_fetch(summoner):
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
+    session = sessionmaker()
+    session.configure(bind=engine)
+    Matches.metadata.create_all(engine)
     lol_watcher = LolWatcher('RGAPI-e72d9aaa-deee-4150-98e5-0bfeb3468fde')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
@@ -67,9 +70,11 @@ def data_fetch(summoner):
             print('Iteration!')
         # Concatenate dataframes into one large dataframe
         df = pd.concat(Games)
-        # print(df)
+        print(df)
         # Convert Pandas Dataframe to SQL Table
         df.to_sql('matches', con=engine, if_exists='append')
+
+
 
 
     except Exception as e:
@@ -81,34 +86,11 @@ def data_fetch(summoner):
         xyz = 1
 
 
-def data_process():
-    # Assign data from first match in DB to match_1
-    match_1 = Matches.query.filter(Matches.level_0 == 0).all()
-    # print(match_1[0:3])
-    # m1 = {}
-    # k = 0
-    # for row in match_1:
-    #     key = match_1.[0:k]
-    #     kda = {match_1.Matches.kills, match_1.Matches.assists, match_1.Matches.deaths}
-    #     m1[key] = kda
-    #     k += 1
-    #     print(m1)
-    # Assign data from first match in DB to match_2
-    match_2 = Matches.query.filter(Matches.level_0 == 1).all()
-
-    # Assign data from first match in DB to match_3
-    match_3 = Matches.query.filter(Matches.level_0 == 2).all()
-
-    # Assign data from first match in DB to match_4
-    match_4 = Matches.query.filter(Matches.level_0 == 3).all()
-
-    # Assign data from first match in DB to match_5
-    match_5 = Matches.query.filter(Matches.level_0 == 4).all()
-
 
 def asset_fetch():
     summonerSpellPath = 0
     summonerRunesPath = 0
+
 
 # Error Handler
 
