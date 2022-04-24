@@ -64,13 +64,13 @@ def data_fetch(summoner):
                 summoners_dict[row['key']] = row['id']
 
                 Games[j] = pd.DataFrame(participants)
-
+            print(summoners_dict)
             j += 1
             cont += 1
             print('Iteration!')
         # Concatenate dataframes into one large dataframe
         df = pd.concat(Games)
-        print(df)
+        #print(df)
         # Convert Pandas Dataframe to SQL Table
         df.to_sql('matches', con=engine, if_exists='append')
 

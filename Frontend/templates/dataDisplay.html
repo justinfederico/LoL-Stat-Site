@@ -97,6 +97,7 @@
             <!-- SPECIFIES UNORDERED LIST OF MATCHES -->
             <div id="match-list">
                 {% for x in range(0, count) %}
+                {% set outer_loop = loop %}
                 <!-- ONE MATCH -->
                 <div id="match-1">
 
@@ -115,7 +116,29 @@
                                     </div>
                                     <div class="d-flex" id="bar"></div>
                                     <div class="d-flex" id="game-result">
-                                        LOSS
+
+
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                {% if match_list[(outer_loop.index-1)][i].win == 1 %}
+                                                    {% block styles %}
+                                                    <style>
+                                                        #game-result {color:green}
+                                                    </style>
+                                                    {% endblock %}
+                                                    WIN
+
+                                                {% elif match_list[(outer_loop.index-1)][i].win == 0 %}
+
+
+
+                                                    LOSS
+                                                {% endif %}
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
+
                                     </div>
                                     <div class="d-flex" id="game-time">
                                         24:57
@@ -126,10 +149,24 @@
                                     <!-- CHAMPION ICON -->
                                     <div class="d-flex flex-column align-self-center" id="champion-info">
                                         <div class="d-flex justify-content-center" id="champion-icon">
-                                            <img src="https://raw.communitydragon.org/12.7/game/assets/characters/ekko/hud/ekko_square.png" alt="Ekko.png" width="50px" height="50px">
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(outer_loop.index-1)][i].champion}}.png" alt="Ekko.png" width="50px" height="50px">
+                                                {% else %}
+
+                                                {% endif %}
+                                        {% endfor %}
+
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                            Ekko
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].championName}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
                                     </div>
                                     <!-- RUNE ICONS -->
@@ -159,11 +196,32 @@
                                             KDA
                                         </div>
                                         <div class="d-flex flex-fill justify-content-center kda-stats">
-                                            <span>{{summoner.kills}}</span>
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].kills}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                             &nbsp|&nbsp
-                                            <span class="deaths">5</span>
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].deaths}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                             &nbsp|&nbsp
-                                            <span>13</span>
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].assists}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
 
                                     </div>
@@ -172,19 +230,36 @@
                                 <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-basic-stats">
                                     <!-- SUMMONER LEVEL -->
                                     <div class="d-flex" id="summoner-level">
-                                        {% if match_1.summonerName==summoner.summonerLevel %}
-                                        {{match_1.summonerLevel}}
-                                        {% else %}
-                                        <span>it broken :(</span>
-                                        {% endif %}
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                Account Level {{match_list[(outer_loop.index-1)][i].summonerLevel}}
+
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <!-- SUMMONER CS AVERAGE -->
                                     <div class="d-flex" id="summoner-cs">
-                                        113 CS Total | 3.4 CS/min
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                {{match_list[(outer_loop.index-1)][i].totalMinionsKilled}} CS
+
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <!-- KILL PARTICIPATION -->
                                     <div class="d-flex" id="summoner-kp">
-                                        Kill Participation | 30.4%
+                                        {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    Kill Participation | guh
+
+                                                {% else %}
+
+                                                {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <!-- MMR AVERAGE -->
                                     <div class="d-flex" id="match-mmr-average">
