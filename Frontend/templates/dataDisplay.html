@@ -90,19 +90,23 @@
             <a href="index.html" class="webpage-title">LEAGUE OF LEGENDS STATISTICS TRACKER</a>
         </header>
         <hr class="one">
-        <h1 style="text-align: center" id="match-header">MATCH HISTORY</h1>
+        <h1 style="text-align: center" id="match-header">MATCH HISTORY FOR {{summoner}}</h1>
 
         <!-- MATCH CONTAINERS -->
         <div class="d-flex flex-column align-items-center justify-content-center" id="match-list-container">
             <!-- SPECIFIES UNORDERED LIST OF MATCHES -->
             <div id="match-list">
+                {% for x in range(0, count) %}
+                {% set outer_loop = loop %}
                 <!-- ONE MATCH -->
-                <div id="match">
+                <div id="match-1">
+
                     <!-- UNEXTENDED MATCH DETAILS CONTAINER -->
                     <div class="d-flex" id="unextended-match-details-container">
                         <ul class="d-flex flex-column">
                             <li class="d-flex flex-row" id="match-statistics">
                                 <!-- MATCH INFO -->
+
                                 <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-info">
                                     <div class="d-flex" id="game-type">
                                         NORMAL
@@ -112,7 +116,29 @@
                                     </div>
                                     <div class="d-flex" id="bar"></div>
                                     <div class="d-flex" id="game-result">
-                                        LOSS
+
+
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                {% if match_list[(outer_loop.index-1)][i].win == 1 %}
+                                                    {% block styles %}
+                                                    <style>
+                                                        #game-result {color:green}
+                                                    </style>
+                                                    {% endblock %}
+                                                    WIN
+
+                                                {% elif match_list[(outer_loop.index-1)][i].win == 0 %}
+
+
+
+                                                    LOSS
+                                                {% endif %}
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
+
                                     </div>
                                     <div class="d-flex" id="game-time">
                                         24:57
@@ -123,10 +149,24 @@
                                     <!-- CHAMPION ICON -->
                                     <div class="d-flex flex-column align-self-center" id="champion-info">
                                         <div class="d-flex justify-content-center" id="champion-icon">
-                                            <img src="https://raw.communitydragon.org/12.7/game/assets/characters/ekko/hud/ekko_square.png" alt="Ekko.png" width="50px" height="50px">
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(outer_loop.index-1)][i].champion}}.png" alt="Ekko.png" width="50px" height="50px">
+                                                {% else %}
+
+                                                {% endif %}
+                                        {% endfor %}
+
                                         </div>
                                         <div class="d-flex justify-content-center">
-                                            Ekko
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].championName}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
                                     </div>
                                     <!-- RUNE ICONS -->
@@ -156,11 +196,32 @@
                                             KDA
                                         </div>
                                         <div class="d-flex flex-fill justify-content-center kda-stats">
-                                            <span>4</span>
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].kills}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                             &nbsp|&nbsp
-                                            <span class="deaths">5</span>
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].deaths}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                             &nbsp|&nbsp
-                                            <span>13</span>
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    {{match_list[(outer_loop.index-1)][i].assists}}
+
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
                                         </div>
 
                                     </div>
@@ -169,15 +230,36 @@
                                 <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-basic-stats">
                                     <!-- SUMMONER LEVEL -->
                                     <div class="d-flex" id="summoner-level">
-                                        Level 213
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                Account Level {{match_list[(outer_loop.index-1)][i].summonerLevel}}
+
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <!-- SUMMONER CS AVERAGE -->
                                     <div class="d-flex" id="summoner-cs">
-                                        113 CS Total | 3.4 CS/min
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                {{match_list[(outer_loop.index-1)][i].totalMinionsKilled}} CS
+
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <!-- KILL PARTICIPATION -->
                                     <div class="d-flex" id="summoner-kp">
-                                        Kill Participation | 30.4%
+                                        {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    Kill Participation | guh
+
+                                                {% else %}
+
+                                                {% endif %}
+                                        {% endfor %}
                                     </div>
                                     <!-- MMR AVERAGE -->
                                     <div class="d-flex" id="match-mmr-average">
@@ -210,111 +292,116 @@
                                 <!-- MATCH PLAYERS -->
                                 <div class="d-flex flex-fill justify-content-center align-self-center" id="match-players">
                                     <!-- TEAM ONE -->
+
                                     <ul class="d-flex flex-column" id="player-list-one">
+
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][0].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][0].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][1].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][1].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][2].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][2].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][3].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][3].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][4].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][4].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
+
                                     </ul>
+
                                     <!-- TEAM TWO -->
                                     <ul class="d-flex flex-column" id="player-list-two">
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][5].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][5].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][6].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][6].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][7].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][7].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][8].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][8].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png" alt="champ icon" width="20px" height="20px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][9].champion}}.png" alt="champ icon" width="20px" height="20px">
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
-                                                    Player Nameasdfsadf
+                                                    {{match_list[(loop.index-1)][9].summonerName}}
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
+
                                 </div>
                                 <!-- BUTTON TO REVEAL EXTENDED MATCH DETAILS CONTAINER -->
                                 <div class="d-flex" id="expand-stats">
@@ -383,12 +470,15 @@
                                     <div class="tab-pane fade" id="gold-and-kills" role="tabpanel">
 
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <!-- END FIRST MATCH -->
+                <!------------------------------------------------------------- END FIRST MATCH ------------------------------------------------------->
+                {% endfor %}
             </div>
         </div>
         <!-- END MATCH CONTAINERS -->

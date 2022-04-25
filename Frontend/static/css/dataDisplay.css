@@ -51,7 +51,7 @@ li {
     max-width: 200px;
 }
 #game-result {
-    color: rgba(242, 0, 0, 0.8);
+    color:red;
 }
 
 /* CHAMPIONS SECTION */
