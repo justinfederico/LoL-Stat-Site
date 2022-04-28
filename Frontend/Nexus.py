@@ -2,7 +2,8 @@ from flask import Flask, redirect, url_for, render_template, request
 import riot_api
 import globals
 from flask_sqlalchemy import SQLAlchemy
-
+import json
+import requests
 
 app = Flask(__name__)
 # Add database
@@ -84,14 +85,128 @@ def lookup():
 
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
-def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None, matches=None, count=None, match_count=None):
+def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None, matches=None,
+                count=None, match_count=None):
     db.create_all()
     riot_api.data_fetch(summoner)
+    summonerSpellsURL = requests.get(
+        "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-spells.json")
+    summonerSpellsData = summonerSpellsURL.text
+    jsonDictionary = json.loads(summonerSpellsData)
     match_1 = Matches.query.filter(Matches.level_0 == 0).all()
+    for z in match_1:
+        if z.summonerName == summoner:
+            summ1 = z.summoner1Id
+            summ2 = z.summoner2Id
+            for v in jsonDictionary:
+                if v['id'] == summ1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner1Id = temp
+                elif v['id'] == summ2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner2Id = temp
+
+                else:
+                    None
+        else:
+            pass
     match_2 = Matches.query.filter(Matches.level_0 == 1).all()
+    for z in match_2:
+        if z.summonerName == summoner:
+            summ1 = z.summoner1Id
+            summ2 = z.summoner2Id
+            for v in jsonDictionary:
+                if v['id'] == summ1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner1Id = temp
+
+                elif v['id'] == summ2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner2Id = temp
+
+                else:
+                    None
+        else:
+            pass
+
     match_3 = Matches.query.filter(Matches.level_0 == 2).all()
+    print(match_3[2].championName)
+    for z in match_3:
+
+        if z.summonerName == summoner:
+            print('it should like, start doing stuff here')
+            summ1 = z.summoner1Id
+            summ2 = z.summoner2Id
+            for v in jsonDictionary:
+                if v['id'] == summ1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    print(temp)
+                    z.summoner1Id = temp
+
+                elif v['id'] == summ2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner2Id = temp
+
+                else:
+                    None
+        else:
+            pass
     match_4 = Matches.query.filter(Matches.level_0 == 3).all()
+    for z in match_4:
+        if z.summonerName == summoner:
+            summ1 = z.summoner1Id
+            summ2 = z.summoner2Id
+            for v in jsonDictionary:
+                if v['id'] == summ1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner1Id = temp
+
+                elif v['id'] == summ2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner2Id = temp
+
+                else:
+                    None
+        else:
+            pass
     match_5 = Matches.query.filter(Matches.level_0 == 4).all()
+    for z in match_5:
+        if z.summonerName == summoner:
+            summ1 = z.summoner1Id
+            summ2 = z.summoner2Id
+            for v in jsonDictionary:
+                if v['id'] == summ1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner1Id = temp
+
+                elif v['id'] == summ2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
+                    temp = temp.lower()
+                    z.summoner2Id = temp
+
+                else:
+                    None
+        else:
+            pass
     match_list = []
     match_list.append(match_1)
     match_list.append(match_2)
@@ -100,14 +215,11 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
     match_list.append(match_5)
     matches = Matches.query.all()
     count = Matches.query.count()
-    count = int(count/10)
-    print(match_list)
-
-
-
+    count = int(count / 10)
 
     return render_template("dataDisplay.html", summoner=summoner, match_1=match_1, match_2=match_2, match_3=match_3,
-                           match_4=match_4, match_5=match_5, matches=matches, count=count, match_list=match_list, match_count=match_count)
+                           match_4=match_4, match_5=match_5, matches=matches, count=count, match_list=match_list,
+                           match_count=match_count)
 
 
 @app.route("/about", methods=["POST", "GET"])

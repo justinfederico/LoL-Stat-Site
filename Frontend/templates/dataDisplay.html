@@ -155,7 +155,7 @@
                                                 {% else %}
 
                                                 {% endif %}
-                                        {% endfor %}
+                                            {% endfor %}
 
                                         </div>
                                         <div class="d-flex justify-content-center">
@@ -181,10 +181,24 @@
                                     <!-- SPELL ICONS -->
                                     <div class="d-flex flex-column align-self-center" id="spells">
                                         <div class="d-flex justify-content-center" id="spell-one">
-                                            <img src="https://raw.communitydragon.org/12.7/game/assets/spells/icons2d/summoner_teleport.png" alt="summoner-spell-one" width="35px" height="35px">
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d{{match_list[(outer_loop.index-1)][i].summoner1Id}}" alt="summoner-spell-one" width="35px" height="35px">
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
+
                                         </div>
                                         <div class="d-flex justify-content-center" id="spell-two">
-                                            <img src="https://raw.communitydragon.org/12.7/game/assets/spells/icons2d/summoner_smite.png" alt="summoner-spell-two" width="35px" height="35px">
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d{{match_list[(outer_loop.index-1)][i].summoner2Id}}" alt="summoner-spell-two" width="35px" height="35px">
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
+
                                         </div>
                                     </div>
                                 </div>

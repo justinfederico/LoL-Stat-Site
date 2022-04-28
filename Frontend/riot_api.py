@@ -5,6 +5,7 @@ from riotwatcher import LolWatcher, ApiError
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import json
+import requests
 from flask_sqlalchemy import SQLAlchemy
 from Frontend.Nexus import Matches
 
@@ -15,7 +16,7 @@ def data_fetch(summoner):
     session = sessionmaker()
     session.configure(bind=engine)
     Matches.metadata.create_all(engine)
-    lol_watcher = LolWatcher('RGAPI-e72d9aaa-deee-4150-98e5-0bfeb3468fde')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-7c6efb3c-a042-4f23-8f9d-450dfdf4990c')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
@@ -64,13 +65,13 @@ def data_fetch(summoner):
                 summoners_dict[row['key']] = row['id']
 
                 Games[j] = pd.DataFrame(participants)
-            print(summoners_dict)
+
             j += 1
             cont += 1
             print('Iteration!')
         # Concatenate dataframes into one large dataframe
         df = pd.concat(Games)
-        #print(df)
+        # print(df)
         # Convert Pandas Dataframe to SQL Table
         df.to_sql('matches', con=engine, if_exists='append')
 
@@ -87,9 +88,6 @@ def data_fetch(summoner):
 
 
 
-def asset_fetch():
-    summonerSpellPath = 0
-    summonerRunesPath = 0
 
 
 # Error Handler
