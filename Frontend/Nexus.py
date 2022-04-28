@@ -85,7 +85,7 @@ def lookup():
 
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
-def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None, matches=None,
+def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
                 count=None, match_count=None):
     db.create_all()
     riot_api.data_fetch(summoner)
@@ -213,12 +213,11 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
     match_list.append(match_3)
     match_list.append(match_4)
     match_list.append(match_5)
-    matches = Matches.query.all()
     count = Matches.query.count()
     count = int(count / 10)
 
     return render_template("dataDisplay.html", summoner=summoner, match_1=match_1, match_2=match_2, match_3=match_3,
-                           match_4=match_4, match_5=match_5, matches=matches, count=count, match_list=match_list,
+                           match_4=match_4, match_5=match_5, count=count, match_list=match_list,
                            match_count=match_count)
 
 
