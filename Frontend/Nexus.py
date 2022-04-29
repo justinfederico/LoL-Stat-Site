@@ -111,6 +111,13 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             item4 = z.item4
             item5 = z.item5
             item6 = z.item6
+            z.item0 = '/gp_ui_placeholder.png' if item0 == 0 else None
+            z.item1 = '/gp_ui_placeholder.png' if item1 == 0 else None
+            z.item2 = '/gp_ui_placeholder.png' if item2 == 0 else None
+            z.item3 = '/gp_ui_placeholder.png' if item3 == 0 else None
+            z.item4 = '/gp_ui_placeholder.png' if item4 == 0 else None
+            z.item5 = '/gp_ui_placeholder.png' if item5 == 0 else None
+            z.item6 = '/gp_ui_placeholder.png' if item6 == 0 else None
             for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
@@ -130,36 +137,37 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item0 = temp
-                elif v['id'] == item1:
+                if v['id'] == item1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item1 = temp
-                elif v['id'] == item2:
+                if v['id'] == item2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item2 = temp
-                elif v['id'] == item3:
+                if v['id'] == item3:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item3 = temp
-                elif v['id'] == item4:
+                if v['id'] == item4:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item4 = temp
-                elif v['id'] == item5:
+                if v['id'] == item5:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item5 = temp
-                elif v['id'] == item6:
+                if v['id'] == item6:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item6 = temp
+
 
         else:
             pass
@@ -175,6 +183,13 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             item4 = z.item4
             item5 = z.item5
             item6 = z.item6
+            z.item0 = '/gp_ui_placeholder.png' if item0 == 0 else None
+            z.item1 = '/gp_ui_placeholder.png' if item1 == 0 else None
+            z.item2 = '/gp_ui_placeholder.png' if item2 == 0 else None
+            z.item3 = '/gp_ui_placeholder.png' if item3 == 0 else None
+            z.item4 = '/gp_ui_placeholder.png' if item4 == 0 else None
+            z.item5 = '/gp_ui_placeholder.png' if item5 == 0 else None
+            z.item6 = '/gp_ui_placeholder.png' if item6 == 0 else None
             for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
@@ -194,32 +209,32 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item0 = temp
-                elif v['id'] == item1:
+                if v['id'] == item1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item1 = temp
-                elif v['id'] == item2:
+                if v['id'] == item2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item2 = temp
-                elif v['id'] == item3:
+                if v['id'] == item3:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item3 = temp
-                elif v['id'] == item4:
+                if v['id'] == item4:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item4 = temp
-                elif v['id'] == item5:
+                if v['id'] == item5:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item5 = temp
-                elif v['id'] == item6:
+                if v['id'] == item6:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
@@ -241,6 +256,15 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             item4 = z.item4
             item5 = z.item5
             item6 = z.item6
+            z.item0 = '/gp_ui_placeholder.png' if item0 == 0 else None
+            z.item1 = '/gp_ui_placeholder.png' if item1 == 0 else None
+            z.item2 = '/gp_ui_placeholder.png' if item2 == 0 else None
+            z.item3 = '/gp_ui_placeholder.png' if item3 == 0 else None
+            z.item4 = '/gp_ui_placeholder.png' if item4 == 0 else None
+            z.item5 = '/gp_ui_placeholder.png' if item5 == 0 else None
+            z.item6 = '/gp_ui_placeholder.png' if item6 == 0 else None
+
+
             for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
@@ -260,36 +284,38 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item0 = temp
-                elif v['id'] == item1:
+                if v['id'] == item1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item1 = temp
-                elif v['id'] == item2:
+                if v['id'] == item2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item2 = temp
-                elif v['id'] == item3:
+                if v['id'] == item3:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item3 = temp
-                elif v['id'] == item4:
+                if v['id'] == item4:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item4 = temp
-                elif v['id'] == item5:
+                if v['id'] == item5:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item5 = temp
-                elif v['id'] == item6:
+                if v['id'] == item6:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item6 = temp
+
+
         else:
             pass
     match_4 = Matches.query.filter(Matches.level_0 == 3).all()
@@ -304,6 +330,13 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             item4 = z.item4
             item5 = z.item5
             item6 = z.item6
+            z.item0 = '/gp_ui_placeholder.png' if item0 == 0 else None
+            z.item1 = '/gp_ui_placeholder.png' if item1 == 0 else None
+            z.item2 = '/gp_ui_placeholder.png' if item2 == 0 else None
+            z.item3 = '/gp_ui_placeholder.png' if item3 == 0 else None
+            z.item4 = '/gp_ui_placeholder.png' if item4 == 0 else None
+            z.item5 = '/gp_ui_placeholder.png' if item5 == 0 else None
+            z.item6 = '/gp_ui_placeholder.png' if item6 == 0 else None
             for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
@@ -323,32 +356,32 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item0 = temp
-                elif v['id'] == item1:
+                if v['id'] == item1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item1 = temp
-                elif v['id'] == item2:
+                if v['id'] == item2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item2 = temp
-                elif v['id'] == item3:
+                if v['id'] == item3:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item3 = temp
-                elif v['id'] == item4:
+                if v['id'] == item4:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item4 = temp
-                elif v['id'] == item5:
+                if v['id'] == item5:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item5 = temp
-                elif v['id'] == item6:
+                if v['id'] == item6:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
@@ -367,6 +400,13 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             item4 = z.item4
             item5 = z.item5
             item6 = z.item6
+            z.item0 = '/gp_ui_placeholder.png' if item0 == 0 else None
+            z.item1 = '/gp_ui_placeholder.png' if item1 == 0 else None
+            z.item2 = '/gp_ui_placeholder.png' if item2 == 0 else None
+            z.item3 = '/gp_ui_placeholder.png' if item3 == 0 else None
+            z.item4 = '/gp_ui_placeholder.png' if item4 == 0 else None
+            z.item5 = '/gp_ui_placeholder.png' if item5 == 0 else None
+            z.item6 = '/gp_ui_placeholder.png' if item6 == 0 else None
             for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
@@ -386,32 +426,32 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item0 = temp
-                elif v['id'] == item1:
+                if v['id'] == item1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item1 = temp
-                elif v['id'] == item2:
+                if v['id'] == item2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item2 = temp
-                elif v['id'] == item3:
+                if v['id'] == item3:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item3 = temp
-                elif v['id'] == item4:
+                if v['id'] == item4:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item4 = temp
-                elif v['id'] == item5:
+                if v['id'] == item5:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
                     z.item5 = temp
-                elif v['id'] == item6:
+                if v['id'] == item6:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
                     temp = temp.lower()
