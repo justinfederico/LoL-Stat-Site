@@ -109,7 +109,6 @@
                         <ul class="d-flex flex-column">
                             <li class="d-flex flex-row" id="match-statistics">
                                 <!-- MATCH INFO -->
-
                                 <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-info">
                                     <div class="d-flex game-type">
                                         NORMAL
@@ -155,7 +154,7 @@
                                         <div class="d-flex justify-content-center" id="champion-icon">
                                             {% for i in range(0, 9) %}
                                                 {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(outer_loop.index-1)][i].champion}}.png" alt="Ekko.png" width="50px" height="50px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(outer_loop.index-1)][i].champion}}.png" alt="Ekko.png" width="50px" height="50px" style="border-radius:50%">
                                                 {% else %}
 
                                                 {% endif %}
@@ -290,29 +289,33 @@
                                         {% for i in range(0, 9) %}
                                             {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
                                                 <li class="item">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item0}}" alt="" width="35px" height="35px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item0}}" alt="item1" width="35px" height="35px">
                                                 </li>
                                                 <li class="item">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item1}}" alt="" width="35px" height="35px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item1}}" alt="item2" width="35px" height="35px">
                                                 </li>
                                                 <li class="item">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item2}}" alt="" width="35px" height="35px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item2}}" alt="item3" width="35px" height="35px">
                                                 </li>
                                                 <li class="item">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item3}}" alt="" width="35px" height="35px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item3}}" alt="item4" width="35px" height="35px">
                                                 </li>
                                                 <li class="item">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item4}}" alt="" width="35px" height="35px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item4}}" alt="item5" width="35px" height="35px">
                                                 </li>
                                                 <li class="item">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item5}}" alt="" width="35px" height="35px">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item5}}" alt="item6" width="35px" height="35px">
                                                 </li>
 
                                             {% else %}
 
                                             {% endif %}
                                         {% endfor %}
-
+                                    </ul>
+                                    <ul class="d-flex flex-column flex-fill justify-content-center align-self-center" id="trinkets-container">
+                                        <li class="trinket">
+                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/2055_class_t1_controlward.png" alt="trinket.png" width="35px" height="35px">
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- MATCH PLAYERS -->
