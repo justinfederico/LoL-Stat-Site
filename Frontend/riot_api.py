@@ -13,8 +13,7 @@ from Frontend.Nexus import Matches
 def data_fetch(summoner):
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
-    session = sessionmaker()
-    session.configure(bind=engine)
+
     Matches.metadata.create_all(engine)
     lol_watcher = LolWatcher('RGAPI-2045d14e-3f01-45a7-9077-b49a83d2993f')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
@@ -54,7 +53,7 @@ def data_fetch(summoner):
                 participants.append(participants_row)
                 Games[j] = pd.DataFrame(participants)
                 # print(Games[j])
-            champ_dict = {}
+            champ_dict = {} # sort of useless since champ assets named after ID only
             for key in current_champ_list['data']:
                 row = current_champ_list['data'][key]
                 champ_dict[row['key']] = row['id']
