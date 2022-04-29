@@ -140,7 +140,7 @@ li {
 }
 
 /* EXTENDED MATCH STATISTICS */
-#extended-match-details {
+.extended-match-details {
     position: relative;
     width: 1500px;
     height: auto;

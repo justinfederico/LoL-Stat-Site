@@ -93,7 +93,7 @@
             <a href="index.html" class="webpage-title">LEAGUE OF LEGENDS STATISTICS TRACKER</a>
         </header>
         <hr class="one">
-        <h1 style="text-align: center" id="match-header">MATCH HISTORY FOR {{summoner}}</h1>
+        <h1 style="text-align: center" id="match-header">{{summoner}}'s Match History</h1>
 
         <!-- MATCH CONTAINERS -->
         <div class="d-flex flex-column align-items-center justify-content-center" id="match-list-container">
@@ -431,7 +431,7 @@
                                 </div>
                                 <!-- BUTTON TO REVEAL EXTENDED MATCH DETAILS CONTAINER -->
                                 <div class="expand-stats d-flex">
-                                    <a class="btn btn-primary d-flex align-items-end expand-stats-button-icon" data-toggle="collapse" href=".extended-match-details" role="button">
+                                    <a class="btn btn-primary d-flex align-items-end expand-stats-button-icon" id="newButton" data-toggle="collapse" href=".extended-match-details" role="button">
                                         <i class="bi-arrow-down"></i>
                                     </a>
                                 </div>
@@ -439,7 +439,8 @@
                         </ul>
                     </div>
                     <!-- EXTENDED MATCH DETAILS CONTAINER -->
-                    <div class="collapse" id="new-extended-match-container">
+                    <div class="extended-match-details">
+                        <div class="collapse" id="new-extended-match-container">
                         <ul class="d-flex flex-column">
                             <li class="d-flex flex-column" id="extended-match-tabs-container">
                                 <div class="d-flex justify-content-center">
@@ -454,53 +455,55 @@
                             </li>
                         </ul>
                         <!-- THESE CONTAINERS HOLD ALL THE INFORMATION FOR BOTH EXTENDED MATCH ANALYSIS AND GOLD/KILLS ELEMENTS -->
-                        <div class="d-flex flex-column align-items-center" id="extended-match-detail-container">
-                            <div class="d-flex flex-row">
-                                <div class="align-items-center tab-content extended-match-content">
-                                    <!-- CONTENT FOR MATCH ANALYSIS -->
-                                    <div class="tab-pane fade show active" id="match-analysis" role="tabpanel">
-                                        <div class="d-flex flex-row flex-fill justify-content-center team-legend">
-                                            <div class="losing-team">
-                                                <span style="color: rgba(242, 0, 0, 0.8);">- LOSING TEAM</span>
+                            <div class="d-flex flex-column align-items-center" id="extended-match-detail-container">
+                                <div class="d-flex flex-row">
+                                    <div class="align-items-center tab-content extended-match-content">
+                                        <!-- CONTENT FOR MATCH ANALYSIS -->
+                                        <div class="tab-pane fade show active" id="match-analysis" role="tabpanel">
+                                            <div class="d-flex flex-row flex-fill justify-content-center team-legend">
+                                                <div class="losing-team">
+                                                    <span style="color: rgba(242, 0, 0, 0.8);">- LOSING TEAM</span>
+                                                </div>
+                                                <div class="winning-team">
+                                                    <span style="color: rgba(0, 141, 242, 0.8);">- WINNING TEAM</span>
+                                                </div>
                                             </div>
-                                            <div class="winning-team">
-                                                <span style="color: rgba(0, 141, 242, 0.8);">- WINNING TEAM</span>
+                                            <div class="container-fluid graphs">
+                                                <div class="row text-center">
+                                                    <div class="col graph-col">
+                                                        CHAMPION KILLS
+                                                    </div>
+                                                    <div class="col graph-col">
+                                                        GOLD EARNED
+                                                    </div>
+                                                    <div class="w-100"></div>
+                                                    <div class="col graph-col">
+                                                        TOTAL DAMAGE DEALT TO CHAMPIONS
+                                                    </div>
+                                                    <div class="col graph-col">
+                                                        WARDS PLACED
+                                                    </div>
+                                                    <div class="w-100"></div>
+                                                    <div class="col graph-col">
+                                                        TOTAL DAMAGE TAKEN
+                                                    </div>
+                                                    <div class="col graph-col">
+                                                        TOTAL CREEP SCORE
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="container-fluid graphs">
-                                            <div class="row text-center">
-                                                <div class="col graph-col">
-                                                    CHAMPION KILLS
-                                                </div>
-                                                <div class="col graph-col">
-                                                    GOLD EARNED
-                                                </div>
-                                                <div class="w-100"></div>
-                                                <div class="col graph-col">
-                                                    TOTAL DAMAGE DEALT TO CHAMPIONS
-                                                </div>
-                                                <div class="col graph-col">
-                                                    WARDS PLACED
-                                                </div>
-                                                <div class="w-100"></div>
-                                                <div class="col graph-col">
-                                                    TOTAL DAMAGE TAKEN
-                                                </div>
-                                                <div class="col graph-col">
-                                                    TOTAL CREEP SCORE
-                                                </div>
-                                            </div>
+                                        <!-- CONTENT FOR GOLD AND KILLS -->
+                                        <div class="tab-pane fade" id="gold-and-kills" role="tabpanel">
+
                                         </div>
-                                    </div>
-                                    <!-- CONTENT FOR GOLD AND KILLS -->
-                                    <div class="tab-pane fade" id="gold-and-kills" role="tabpanel">
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                 </div>
                 <!------------------------------------------------------------- END FIRST MATCH ------------------------------------------------------->

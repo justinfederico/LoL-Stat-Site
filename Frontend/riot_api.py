@@ -15,7 +15,7 @@ def data_fetch(summoner):
     session = sessionmaker()
     session.configure(bind=engine)
     Matches.metadata.create_all(engine)
-    lol_watcher = LolWatcher('RGAPI-98a85b97-c6fd-45f0-b9c4-a9c56431fac9')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-46c997dd-da07-40b3-9644-388e30a7e742')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
