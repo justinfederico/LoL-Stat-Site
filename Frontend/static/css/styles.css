@@ -98,7 +98,7 @@ hr.one {
   min-height: 100vh;
   min-width: 100vh;
   background-size: cover !important;
-  background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg00.deviantart.net%2F19f8%2Fi%2F2016%2F011%2Fc%2F7%2Fyasuo_minimalist___league_of_legends_by_sangpendosa-d9nkuop.png&f=1&nofb=1");
+  background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg00.deviantart.net%2F19f8%2Fi%2F2016%2F011%2Fc%2F7%2Fyasuo_minimalist___league_of_legends_by_sangpendosa-d9nkuop.png&f=1&nofb=1") fixed;
   background-position-y: top;
 }
 

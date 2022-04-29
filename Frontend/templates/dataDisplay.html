@@ -99,7 +99,7 @@
                 {% for x in range(0, count) %}
                 {% set outer_loop = loop %}
                 <!-- ONE MATCH -->
-                <div id="match-1">
+                <div class="match">
 
                     <!-- UNEXTENDED MATCH DETAILS CONTAINER -->
                     <div class="d-flex" id="unextended-match-details-container">
@@ -155,7 +155,7 @@
                                                 {% else %}
 
                                                 {% endif %}
-                                        {% endfor %}
+                                            {% endfor %}
 
                                         </div>
                                         <div class="d-flex justify-content-center">
@@ -181,10 +181,24 @@
                                     <!-- SPELL ICONS -->
                                     <div class="d-flex flex-column align-self-center" id="spells">
                                         <div class="d-flex justify-content-center" id="spell-one">
-                                            <img src="https://raw.communitydragon.org/12.7/game/assets/spells/icons2d/summoner_teleport.png" alt="summoner-spell-one" width="35px" height="35px">
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d{{match_list[(outer_loop.index-1)][i].summoner1Id}}" alt="summoner-spell-one" width="35px" height="35px">
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
+
                                         </div>
                                         <div class="d-flex justify-content-center" id="spell-two">
-                                            <img src="https://raw.communitydragon.org/12.7/game/assets/spells/icons2d/summoner_smite.png" alt="summoner-spell-two" width="35px" height="35px">
+                                            {% for i in range(0, 9) %}
+                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/data/spells/icons2d{{match_list[(outer_loop.index-1)][i].summoner2Id}}" alt="summoner-spell-two" width="35px" height="35px">
+                                                {% else %}
+
+                                                {% endif %}
+                                            {% endfor %}
+
                                         </div>
                                     </div>
                                 </div>
@@ -269,24 +283,32 @@
                                 <!-- MATCH ITEMS -->
                                 <div class="d-flex flex-fill justify-content-center align-self-center" id="match-items">
                                     <ul class="d-flex flex-row flex-wrap justify-content-center" id="items-container">
-                                        <li class="item">
-                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
-                                        </li>
-                                        <li class="item">
-                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
-                                        </li>
-                                        <li class="item">
-                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
-                                        </li>
-                                        <li class="item">
-                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
-                                        </li>
-                                        <li class="item">
-                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
-                                        </li>
-                                        <li class="item">
-                                            <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3070_all_t1_tearofthegoddess.png" alt="" width="35px" height="35px">
-                                        </li>
+                                        {% for i in range(0, 9) %}
+                                            {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
+                                                <li class="item">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item0}}" alt="" width="35px" height="35px">
+                                                </li>
+                                                <li class="item">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item1}}" alt="" width="35px" height="35px">
+                                                </li>
+                                                <li class="item">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item2}}" alt="" width="35px" height="35px">
+                                                </li>
+                                                <li class="item">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item3}}" alt="" width="35px" height="35px">
+                                                </li>
+                                                <li class="item">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item4}}" alt="" width="35px" height="35px">
+                                                </li>
+                                                <li class="item">
+                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d{{match_list[(outer_loop.index-1)][i].item5}}" alt="" width="35px" height="35px">
+                                                </li>
+
+                                            {% else %}
+
+                                            {% endif %}
+                                        {% endfor %}
+
                                     </ul>
                                 </div>
                                 <!-- MATCH PLAYERS -->
@@ -404,8 +426,8 @@
 
                                 </div>
                                 <!-- BUTTON TO REVEAL EXTENDED MATCH DETAILS CONTAINER -->
-                                <div class="d-flex" id="expand-stats">
-                                    <a class="btn btn-primary d-flex align-items-end expand-stats-button-icon" data-toggle="collapse" href="#extended-match-details" role="button">
+                                <div class="expand-stats d-flex">
+                                    <a class="btn btn-primary d-flex align-items-end expand-stats-button-icon" data-toggle="collapse" href=".extended-match-details" role="button">
                                         <i class="bi-arrow-down"></i>
                                     </a>
                                 </div>
@@ -413,7 +435,7 @@
                         </ul>
                     </div>
                     <!-- EXTENDED MATCH DETAILS CONTAINER -->
-                    <div class="collapse" id="extended-match-details">
+                    <div class="collapse extended-match-details">
                         <ul class="d-flex flex-column">
                             <li class="d-flex flex-column" id="extended-match-tabs-container">
                                 <div class="d-flex justify-content-center">
