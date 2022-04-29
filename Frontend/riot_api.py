@@ -5,18 +5,17 @@ from riotwatcher import LolWatcher, ApiError
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import json
-import requests
 from flask_sqlalchemy import SQLAlchemy
 from Frontend.Nexus import Matches
 
 
 def data_fetch(summoner):
     engine = create_engine(
-        'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
+        'sqlite:///C:\\Users\\Jarel Macanas\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
     session = sessionmaker()
     session.configure(bind=engine)
     Matches.metadata.create_all(engine)
-    lol_watcher = LolWatcher('RGAPI-7c6efb3c-a042-4f23-8f9d-450dfdf4990c')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-98a85b97-c6fd-45f0-b9c4-a9c56431fac9')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10

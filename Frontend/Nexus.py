@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///matches.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Set API key for function calls
-app.config['RIOT_API_KEY'] = 'RGAPI-0ffe58eb-0746-422c-bb4c-b32eb7fdcdd4'
+app.config['RIOT_API_KEY'] = 'RGAPI-98a85b97-c6fd-45f0-b9c4-a9c56431fac9'
 # Initialize Database
 db = SQLAlchemy(app)
 
