@@ -11,6 +11,7 @@ from Frontend.Nexus import Matches
 
 
 def data_fetch(summoner):
+
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
 
@@ -50,6 +51,7 @@ def data_fetch(summoner):
                                     'visionWardsBoughtInGame': row['visionWardsBoughtInGame'],
                                     'visionScore': row['visionScore'], 'totalDamageDealt': row['totalDamageDealt'],
                                     'totalDamageDealtToChampions': row['totalDamageDealtToChampions']}
+                                    # 'perk': row['perk'], 'var1': row['var1'], 'var2': row['var2'], 'var3': row['var3']
                 participants.append(participants_row)
                 Games[j] = pd.DataFrame(participants)
                 # print(Games[j])

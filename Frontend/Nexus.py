@@ -41,6 +41,10 @@ class Matches(db.Model):
     visionScore = db.Column(db.Integer)
     totalDamageDealt = db.Column(db.BIGINT)
     totalDamageDealtToChampions = db.Column(db.BIGINT)
+    # perk = db.Column(db.BIGINT)
+    # var1 = db.Column(db.BIGINT)
+    # var2 = db.Column(db.BIGINT)
+    # var3 = db.Column(db.BIGINT)
 
     __table_args__ = (
         db.PrimaryKeyConstraint("level_0", "level_1"),
@@ -88,6 +92,7 @@ def lookup():
 @app.route("/display/<summoner>", methods=["POST", "GET"])
 def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
                 count=None, match_count=None):
+    db.drop_all()
     db.create_all()
     riot_api.data_fetch(summoner)
     summonerSpellsURL = requests.get(
@@ -243,7 +248,6 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             pass
 
     match_3 = Matches.query.filter(Matches.level_0 == 2).all()
-    print(match_3[2].championName)
     for z in match_3:
 
         if z.summonerName == summoner:
