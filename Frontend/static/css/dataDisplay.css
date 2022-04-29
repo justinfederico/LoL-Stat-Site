@@ -18,10 +18,10 @@ li {
 }
 
 /* MAIN MATCH CONTAINERS */
-#match {
+.match {
     margin-bottom: 1rem;
 }
-#match-list-container {
+.match-list-container {
     display: inline-block;
     margin: 0px 20px 15px 200px;
     padding: unset;
@@ -49,9 +49,6 @@ li {
 #match-info {
     padding: 7px;
     max-width: 200px;
-}
-#game-result {
-    color:red;
 }
 
 /* CHAMPIONS SECTION */

@@ -33,6 +33,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300&display=swap" rel="stylesheet">
     <!-- Saira Stencil One: Regular 400 -->
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+
+    <!-- INCLUDE MAIN.JS FILE -->
+    <script type="text/javascript" src="../static/js/main.js"></script>
 </head>
 
     <div class="nav">
@@ -108,31 +111,32 @@
                                 <!-- MATCH INFO -->
 
                                 <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-info">
-                                    <div class="d-flex" id="game-type">
+                                    <div class="d-flex game-type">
                                         NORMAL
                                     </div>
                                     <div class="timestamp">
                                         2 DAYS AGO
                                     </div>
-                                    <div class="d-flex" id="bar"></div>
-                                    <div class="d-flex" id="game-result">
-
-
+                                    <div class="d-flex bar"></div>
+                                    <div class="d-flex game-result">
                                         {% for i in range(0, 9) %}
                                             {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
                                                 {% if match_list[(outer_loop.index-1)][i].win == 1 %}
-                                                    {% block styles %}
+                                                    {% block winStyle %}
                                                     <style>
-                                                        #game-result {color:green}
+                                                        .game-result {color:green}
                                                     </style>
                                                     {% endblock %}
                                                     WIN
-
-                                                {% elif match_list[(outer_loop.index-1)][i].win == 0 %}
-
-
-
-                                                    LOSS
+                                                {% else %}
+                                                    {% if match_list[(outer_loop.index-1)][i].win == 0 %}
+                                                        {% block lossStyle %}
+                                                        <style>
+                                                            .game-result {color:red}
+                                                        </style>
+                                                        {% endblock %}
+                                                        LOSS
+                                                    {% endif %}
                                                 {% endif %}
                                             {% else %}
 
@@ -435,7 +439,7 @@
                         </ul>
                     </div>
                     <!-- EXTENDED MATCH DETAILS CONTAINER -->
-                    <div class="collapse extended-match-details">
+                    <div class="collapse" id="new-extended-match-container">
                         <ul class="d-flex flex-column">
                             <li class="d-flex flex-column" id="extended-match-tabs-container">
                                 <div class="d-flex justify-content-center">
@@ -500,16 +504,24 @@
 
                 </div>
                 <!------------------------------------------------------------- END FIRST MATCH ------------------------------------------------------->
+                <script type="text/javascript">
+                    dynamicButtons();
+                </script>
                 {% endfor %}
             </div>
         </div>
         <!-- END MATCH CONTAINERS -->
     </div>
 
+    <!-- INCLUDE JQUERY 3.6.0 VIA GOOGLE CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- INSTALL BOOTSTRAP BUNDLE W/ POPPER -->
     <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
     <!-- INSTALL IONICONS PACKAGE FOR ICONS -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+
+
 
 </body>
 
