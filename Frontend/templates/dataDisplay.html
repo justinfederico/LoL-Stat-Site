@@ -323,7 +323,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][0].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][0].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][0].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][0].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][0].summonerName}}
@@ -333,7 +337,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][1].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][1].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][1].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][1].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][1].summonerName}}
@@ -343,7 +351,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][2].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][2].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][2].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][2].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][2].summonerName}}
@@ -353,7 +365,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][3].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][4].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][3].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][3].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][3].summonerName}}
@@ -363,7 +379,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][4].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][4].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][4].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][4].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][4].summonerName}}
@@ -378,7 +398,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][5].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][5].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][5].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][5].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][5].summonerName}}
@@ -388,7 +412,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][6].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][6].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][6].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][6].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][6].summonerName}}
@@ -398,7 +426,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][7].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][7].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][7].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][7].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][7].summonerName}}
@@ -408,7 +440,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][8].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][8].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][8].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][8].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][8].summonerName}}
@@ -418,7 +454,11 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][9].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% if match_list[(loop.index-1)][9].summonerName == summoner %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][9].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
+                                                    {% else %}
+                                                        <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][9].champion}}.png" alt="champ icon" width="20px" height="20px">
+                                                    {% endif %}
                                                 </div>
                                                 <div class="player-name text-truncate align-self-center justify-content-center">
                                                     {{match_list[(loop.index-1)][9].summonerName}}
