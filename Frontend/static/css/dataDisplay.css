@@ -23,7 +23,7 @@ li {
 }
 #match-list-container {
     display: inline-block;
-    margin: 0px 20px 15px 200px;
+    margin: 0px 20px 0px 200px;
     padding: unset;
 }
 #match-list {
