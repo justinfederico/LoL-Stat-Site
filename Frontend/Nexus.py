@@ -29,6 +29,7 @@ class Matches(db.Model):
     assists = db.Column(db.BIGINT)
     summoner1Id = db.Column(db.BIGINT)
     summoner2Id = db.Column(db.BIGINT)
+    item0 = db.Column(db.BIGINT)
     item1 = db.Column(db.BIGINT)
     item2 = db.Column(db.BIGINT)
     item3 = db.Column(db.BIGINT)
@@ -92,13 +93,25 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
     summonerSpellsURL = requests.get(
         "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-spells.json")
     summonerSpellsData = summonerSpellsURL.text
-    jsonDictionary = json.loads(summonerSpellsData)
+    jsonSummDictionary = json.loads(summonerSpellsData)
+    itemsURL = requests.get("https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1"
+                            "/items.json")
+    itemsData = itemsURL.text
+    jsonItemDictionary = json.loads(itemsData)
+
     match_1 = Matches.query.filter(Matches.level_0 == 0).all()
     for z in match_1:
         if z.summonerName == summoner:
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
-            for v in jsonDictionary:
+            item0 = z.item0
+            item1 = z.item1
+            item2 = z.item2
+            item3 = z.item3
+            item4 = z.item4
+            item5 = z.item5
+            item6 = z.item6
+            for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
@@ -109,9 +122,45 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner2Id = temp
-
                 else:
                     None
+            for v in jsonItemDictionary:
+                if v['id'] == item0:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item0 = temp
+                elif v['id'] == item1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item1 = temp
+                elif v['id'] == item2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item2 = temp
+                elif v['id'] == item3:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item3 = temp
+                elif v['id'] == item4:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item4 = temp
+                elif v['id'] == item5:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item5 = temp
+                elif v['id'] == item6:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item6 = temp
+
         else:
             pass
     match_2 = Matches.query.filter(Matches.level_0 == 1).all()
@@ -119,21 +168,62 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
         if z.summonerName == summoner:
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
-            for v in jsonDictionary:
+            item0 = z.item0
+            item1 = z.item1
+            item2 = z.item2
+            item3 = z.item3
+            item4 = z.item4
+            item5 = z.item5
+            item6 = z.item6
+            for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner1Id = temp
-
                 elif v['id'] == summ2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner2Id = temp
-
                 else:
                     None
+            for v in jsonItemDictionary:
+                if v['id'] == item0:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item0 = temp
+                elif v['id'] == item1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item1 = temp
+                elif v['id'] == item2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item2 = temp
+                elif v['id'] == item3:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item3 = temp
+                elif v['id'] == item4:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item4 = temp
+                elif v['id'] == item5:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item5 = temp
+                elif v['id'] == item6:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item6 = temp
         else:
             pass
 
@@ -142,25 +232,64 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
     for z in match_3:
 
         if z.summonerName == summoner:
-            print('it should like, start doing stuff here')
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
-            for v in jsonDictionary:
+            item0 = z.item0
+            item1 = z.item1
+            item2 = z.item2
+            item3 = z.item3
+            item4 = z.item4
+            item5 = z.item5
+            item6 = z.item6
+            for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
-                    print(temp)
                     z.summoner1Id = temp
-
                 elif v['id'] == summ2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner2Id = temp
-
                 else:
                     None
+            for v in jsonItemDictionary:
+                if v['id'] == item0:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item0 = temp
+                elif v['id'] == item1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item1 = temp
+                elif v['id'] == item2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item2 = temp
+                elif v['id'] == item3:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item3 = temp
+                elif v['id'] == item4:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item4 = temp
+                elif v['id'] == item5:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item5 = temp
+                elif v['id'] == item6:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item6 = temp
         else:
             pass
     match_4 = Matches.query.filter(Matches.level_0 == 3).all()
@@ -168,21 +297,62 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
         if z.summonerName == summoner:
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
-            for v in jsonDictionary:
+            item0 = z.item0
+            item1 = z.item1
+            item2 = z.item2
+            item3 = z.item3
+            item4 = z.item4
+            item5 = z.item5
+            item6 = z.item6
+            for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner1Id = temp
-
                 elif v['id'] == summ2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner2Id = temp
-
                 else:
                     None
+            for v in jsonItemDictionary:
+                if v['id'] == item0:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item0 = temp
+                elif v['id'] == item1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item1 = temp
+                elif v['id'] == item2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item2 = temp
+                elif v['id'] == item3:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item3 = temp
+                elif v['id'] == item4:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item4 = temp
+                elif v['id'] == item5:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item5 = temp
+                elif v['id'] == item6:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item6 = temp
         else:
             pass
     match_5 = Matches.query.filter(Matches.level_0 == 4).all()
@@ -190,21 +360,63 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
         if z.summonerName == summoner:
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
-            for v in jsonDictionary:
+            item0 = z.item0
+            item1 = z.item1
+            item2 = z.item2
+            item3 = z.item3
+            item4 = z.item4
+            item5 = z.item5
+            item6 = z.item6
+            for v in jsonSummDictionary:
                 if v['id'] == summ1:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner1Id = temp
-
                 elif v['id'] == summ2:
                     temp = v['iconPath']
                     temp = temp.replace('/lol-game-data/assets/DATA/Spells/Icons2D', '')
                     temp = temp.lower()
                     z.summoner2Id = temp
-
                 else:
                     None
+            for v in jsonItemDictionary:
+                if v['id'] == item0:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item0 = temp
+                elif v['id'] == item1:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item1 = temp
+                elif v['id'] == item2:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item2 = temp
+                elif v['id'] == item3:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item3 = temp
+                elif v['id'] == item4:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item4 = temp
+                elif v['id'] == item5:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item5 = temp
+                elif v['id'] == item6:
+                    temp = v['iconPath']
+                    temp = temp.replace('/lol-game-data/assets/ASSETS/Items/Icons2D', '')
+                    temp = temp.lower()
+                    z.item6 = temp
+
         else:
             pass
     match_list = []

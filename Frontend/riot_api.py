@@ -44,7 +44,7 @@ def data_fetch(summoner):
                                     'championName': row['championName'], 'win': row['win'],
                                     'kills': row['kills'], 'deaths': row['deaths'], 'assists': row['assists'],
                                     'summoner1Id': row['summoner1Id'],
-                                    'summoner2Id': row['summoner2Id'],
+                                    'summoner2Id': row['summoner2Id'], 'item0': row['item0'],
                                     'item1': row['item1'], 'item2': row['item2'], 'item3': row['item3'],
                                     'item4': row['item4'], 'item5': row['item5'], 'item6': row['item6'],
                                     'totalMinionsKilled': row['totalMinionsKilled'],
