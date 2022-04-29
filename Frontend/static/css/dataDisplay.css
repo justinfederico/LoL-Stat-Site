@@ -21,7 +21,7 @@ li {
 .match {
     margin-bottom: 1rem;
 }
-.match-list-container {
+#match-list-container {
     display: inline-block;
     margin: 0px 20px 15px 200px;
     padding: unset;
@@ -47,14 +47,16 @@ li {
 
 /* MATCH INFO SECTION */
 #match-info {
-    padding: 7px;
+    padding: 7px 18px;
     max-width: 200px;
+    min-width: 200px;
 }
 
 /* CHAMPIONS SECTION */
 #match-champion {
     padding: 7px;
-    max-width: 275px;
+    max-width: 300px;
+    min-width: 300px;
 }
 #champion-info {
     padding-right: 7px;
@@ -90,6 +92,8 @@ li {
 /* KDA SECTION */
 #match-kda {
     padding: 7px;
+    max-width: 175px;
+    min-width: 175px;
 }
 .kda-text {
     font-size: 20px;
@@ -105,12 +109,15 @@ li {
 /* BASIC STATS SECTION */
 #match-basic-stats {
     padding: 7px;
+    max-width: 270px;
+    min-width: 270px;
 }
 
 /* ITEMS SECTION */
 #match-items {
     padding: 7px;
-    max-width: 150px;
+    max-width: 200px;
+    min-width: 200px;
 }
 .item {
     margin: 2px;
@@ -121,6 +128,8 @@ li {
 /* PLAYERS SECTION */
 #match-players {
     padding: 7px;
+    max-width: 300px;
+    min-width: 300px;
 }
 #player-list-one {
     max-width: 120px;
