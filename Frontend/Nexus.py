@@ -91,10 +91,11 @@ def lookup():
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
 def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
-                count=None, match_count=None):
+                count=None, match_count=None, metadata=None):
     db.drop_all()
     db.create_all()
-    riot_api.data_fetch(summoner)
+    metadata = riot_api.data_fetch(summoner)
+    print(metadata)
     summonerSpellsURL = requests.get(
         "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-spells.json")
     summonerSpellsData = summonerSpellsURL.text
@@ -474,7 +475,7 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
 
     return render_template("dataDisplay.html", summoner=summoner, match_1=match_1, match_2=match_2, match_3=match_3,
                            match_4=match_4, match_5=match_5, count=count, match_list=match_list,
-                           match_count=match_count)
+                           match_count=match_count, metadata=metadata)
 
 
 @app.route("/about", methods=["POST", "GET"])

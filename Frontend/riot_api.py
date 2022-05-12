@@ -11,16 +11,17 @@ from Frontend.Nexus import Matches
 
 
 def data_fetch(summoner):
-
+    metadata = []
     engine = create_engine(
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
 
     Matches.metadata.create_all(engine)
-    lol_watcher = LolWatcher('RGAPI-2045d14e-3f01-45a7-9077-b49a83d2993f')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-bc02846c-8ad8-48de-9760-d22c07ac63aa')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
     Games = {}  # data container for all match data
+    match_info = {}
 
     versions = lol_watcher.data_dragon.versions_for_region(my_region)
     champions_version = versions['n']['champion']
@@ -30,13 +31,19 @@ def data_fetch(summoner):
     current_summoners_list = lol_watcher.data_dragon.summoner_spells(summoner_spells_version)
     my_matches = lol_watcher.match.matchlist_by_puuid('americas',
                                                       me['puuid'], count=5)  # this guy right here is the problem child
+
     j = 0
     cont = 0
     try:
         while cont < n_games:
             match_detail = lol_watcher.match.by_id('americas', my_matches[j])
             participants = []
-            print(my_matches[j])
+            runes = []
+
+            metadata_row = {'gameMode': match_detail['info']['gameMode'],
+                            'gameDuration': match_detail['info']['gameDuration']}
+            metadata.append(metadata_row)
+
             for row in match_detail['info']['participants']:
                 participants_row = {'summonerName': row['summonerName'],
                                     'summonerLevel': row['summonerLevel'],
@@ -51,11 +58,17 @@ def data_fetch(summoner):
                                     'visionWardsBoughtInGame': row['visionWardsBoughtInGame'],
                                     'visionScore': row['visionScore'], 'totalDamageDealt': row['totalDamageDealt'],
                                     'totalDamageDealtToChampions': row['totalDamageDealtToChampions']}
-                                    # 'perk': row['perk'], 'var1': row['var1'], 'var2': row['var2'], 'var3': row['var3']
+                # 'perk': row['perk'], 'var1': row['var1'], 'var2': row['var2'], 'var3': row['var3']
                 participants.append(participants_row)
+                # runes_row = {'perk': row['perks']['styles']['selections']['perk'].values(),
+                #              'var1': row['perks']['styles']['selections']['var1'].values(),
+                #              'var2': row['perks']['styles']['selections']['var2'].values(),
+                #              'var3': row['perks']['styles']['selections']['var3'].values()}
+                # runes.append(runes_row)
+                # print(runes)
                 Games[j] = pd.DataFrame(participants)
                 # print(Games[j])
-            champ_dict = {} # sort of useless since champ assets named after ID only
+            champ_dict = {}  # sort of useless now since champ assets named after ID only
             for key in current_champ_list['data']:
                 row = current_champ_list['data'][key]
                 champ_dict[row['key']] = row['id']
@@ -84,12 +97,7 @@ def data_fetch(summoner):
         print('Except caught')
         print(e)
     finally:
-
-        xyz = 1
-
-
-
-
+        return metadata
 
 # Error Handler
 

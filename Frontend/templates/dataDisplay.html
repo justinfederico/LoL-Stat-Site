@@ -110,9 +110,11 @@
                             <li class="d-flex flex-row" id="match-statistics">
                                 <!-- MATCH INFO -->
                                 <div class="d-flex flex-column flex-fill justify-content-center align-items-center" id="match-info">
+
                                     <div class="d-flex game-type">
-                                        NORMAL
+                                        {{metadata[outer_loop.index-1].gameMode}}
                                     </div>
+
                                     <div class="timestamp">
                                         2 DAYS AGO
                                     </div>
@@ -138,7 +140,7 @@
 
                                     </div>
                                     <div class="d-flex" id="game-time">
-                                        24:57
+                                        {{(metadata[outer_loop.index-1].gameDuration/60)|round|int}}:{{ '%02d'|format((metadata[outer_loop.index-1].gameDuration)%60)}}
                                     </div>
                                 </div>
                                 <!-- MATCH CHAMPION -->
