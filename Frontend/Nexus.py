@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///matches.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Set API key for function calls
-app.config['RIOT_API_KEY'] = 'RGAPI-46c997dd-da07-40b3-9644-388e30a7e742'
+app.config['RIOT_API_KEY'] = 'RGAPI-2fe6c723-e945-4f70-9235-507975787a22'
 # Initialize Database
 db = SQLAlchemy(app)
 
@@ -86,7 +86,7 @@ def lookup():
 
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
-def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
+def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
                 count=None, match_count=None):
     db.create_all()
     riot_api.data_fetch(summoner)
@@ -98,6 +98,12 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                             "/items.json")
     itemsData = itemsURL.text
     jsonItemDictionary = json.loads(itemsData)
+    totalKills = 0
+    totalSummonerKills = 0
+    totalAssists = 0
+    totalSummonerAssists = 0
+
+    summoner_kp = []
 
     match_1 = Matches.query.filter(Matches.level_0 == 0).all()
     for z in match_1:
@@ -171,6 +177,7 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
 
         else:
             pass
+
     match_2 = Matches.query.filter(Matches.level_0 == 1).all()
     for z in match_2:
         if z.summonerName == summoner:
@@ -243,9 +250,7 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
             pass
 
     match_3 = Matches.query.filter(Matches.level_0 == 2).all()
-    print(match_3[2].championName)
     for z in match_3:
-
         if z.summonerName == summoner:
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
@@ -318,6 +323,7 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
 
         else:
             pass
+
     match_4 = Matches.query.filter(Matches.level_0 == 3).all()
     for z in match_4:
         if z.summonerName == summoner:

@@ -34,8 +34,15 @@
     <!-- Saira Stencil One: Regular 400 -->
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 
+    <!-- INSTALL CHARTS.JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <!-- INCLUDE MAIN.JS FILE -->
     <script type="text/javascript" src="../static/js/main.js"></script>
+    <!-- INCLUDE GRAPH.JS FILE -->
+    <script type="text/javascript" src="../static/js/graph.js"></script>
+    <!-- INCLUDE DATA.JS FILE -->
+    <script type="text/javascript" src="../static/js/data.js"></script>
+
 </head>
 
     <div class="nav">
@@ -508,11 +515,29 @@
                                             </div>
                                             <div class="container-fluid graphs">
                                                 <div class="row text-center">
-                                                    <div class="col graph-col">
-                                                        CHAMPION KILLS
+                                                    <div class="col graph-col text-center align-items-center">
+                                                        <div>
+                                                            CHAMPION KILLS
+                                                        </div>
+                                                        <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
+                                                            <canvas id="newKillGraph" width="600" height="300">
+                                                                <script type="text/javascript">
+                                                                    renderChampKillChart();
+                                                                </script>
+                                                            </canvas>
+                                                        </div>
                                                     </div>
                                                     <div class="col graph-col">
-                                                        GOLD EARNED
+                                                        <div>
+                                                            GOLD EARNED
+                                                        </div>
+                                                        <div style="display: inline-block; height: 300px; width: 300px; max-width: 300px; max-height: 300px">
+                                                            <canvas id="newGoldEarnedGraph" width="300" height="300">
+                                                                <script type="text/javascript">
+                                                                    renderGoldEarnedChart()
+                                                                </script>
+                                                            </canvas>
+                                                        </div>
                                                     </div>
                                                     <div class="w-100"></div>
                                                     <div class="col graph-col">
@@ -560,7 +585,6 @@
     <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
     <!-- INSTALL IONICONS PACKAGE FOR ICONS -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-
 
 
 
