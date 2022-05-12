@@ -41,6 +41,10 @@ class Matches(db.Model):
     visionScore = db.Column(db.Integer)
     totalDamageDealt = db.Column(db.BIGINT)
     totalDamageDealtToChampions = db.Column(db.BIGINT)
+    # perk = db.Column(db.BIGINT)
+    # var1 = db.Column(db.BIGINT)
+    # var2 = db.Column(db.BIGINT)
+    # var3 = db.Column(db.BIGINT)
 
     __table_args__ = (
         db.PrimaryKeyConstraint("level_0", "level_1"),
@@ -86,10 +90,12 @@ def lookup():
 
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
-def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
-                count=None, match_count=None):
+def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
+                count=None, match_count=None, metadata=None):
+    db.drop_all()
     db.create_all()
-    riot_api.data_fetch(summoner)
+    metadata = riot_api.data_fetch(summoner)
+    print(metadata)
     summonerSpellsURL = requests.get(
         "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-spells.json")
     summonerSpellsData = summonerSpellsURL.text
@@ -98,12 +104,6 @@ def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=
                             "/items.json")
     itemsData = itemsURL.text
     jsonItemDictionary = json.loads(itemsData)
-    totalKills = 0
-    totalSummonerKills = 0
-    totalAssists = 0
-    totalSummonerAssists = 0
-
-    summoner_kp = []
 
     match_1 = Matches.query.filter(Matches.level_0 == 0).all()
     for z in match_1:
@@ -177,7 +177,6 @@ def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=
 
         else:
             pass
-
     match_2 = Matches.query.filter(Matches.level_0 == 1).all()
     for z in match_2:
         if z.summonerName == summoner:
@@ -251,6 +250,7 @@ def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=
 
     match_3 = Matches.query.filter(Matches.level_0 == 2).all()
     for z in match_3:
+
         if z.summonerName == summoner:
             summ1 = z.summoner1Id
             summ2 = z.summoner2Id
@@ -323,7 +323,6 @@ def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=
 
         else:
             pass
-
     match_4 = Matches.query.filter(Matches.level_0 == 3).all()
     for z in match_4:
         if z.summonerName == summoner:
@@ -476,7 +475,7 @@ def datadisplay(summoner, summoner_kp=None, match_1=None, match_2=None, match_3=
 
     return render_template("dataDisplay.html", summoner=summoner, match_1=match_1, match_2=match_2, match_3=match_3,
                            match_4=match_4, match_5=match_5, count=count, match_list=match_list,
-                           match_count=match_count)
+                           match_count=match_count, metadata=metadata)
 
 
 @app.route("/about", methods=["POST", "GET"])
