@@ -14,26 +14,7 @@
   BEGIN STYLING
  =================================================================================================================== */
 
-/* Small screens, so it is resized on mobile/tiny screens */
-@media only screen and (max-width: 600px) {
-  .navbar {
-    bottom: 0;
-    width: 100vw;
-    height: 5rem;
-  }
-  .logo {
-    display: none;
-  }
-  .navbar-nav {
-    flex-direction: row;
-  }
-  .nav-link {
-    justify-content: center;
-  }
-  main {
-    margin: 0;
-  }
-}
+
 
 
 /* This is so that certain fonts/parameters are used universally throughout the site */
@@ -184,4 +165,24 @@ hr.one {
 }
 .navbar:hover .link-text {
   display: block;
+}
+
+/* Card styling */
+.champ-rot {
+  align-items: center;
+  padding-left: 36rem;
+}
+.cards {
+  padding-left: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    max-height: 10rem;
+    }
+.cards img {
+  margin: 10px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+  max-width: 23vw;
 }

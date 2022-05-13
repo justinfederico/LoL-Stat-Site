@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 import requests
 
+
 app = Flask(__name__)
 # Add database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///matches.db'
@@ -50,7 +51,6 @@ class Matches(db.Model):
         db.PrimaryKeyConstraint("level_0", "level_1"),
     )
 
-
 # Create Database
 db.drop_all()
 db.create_all()
@@ -65,8 +65,9 @@ def logoclick():
 
 
 @app.route("/", methods=["POST", "GET"])
-def default():
-    return render_template("index.html")
+def default(free_champs=None):
+    free_champs = riot_api.get_free_champs()
+    return render_template("index.html", free_champs=free_champs)
 
 
 @app.route("/home", methods=["POST", "GET"])
@@ -91,7 +92,7 @@ def lookup():
 
 @app.route("/display/<summoner>", methods=["POST", "GET"])
 def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None, match_5=None,
-                count=None, match_count=None, metadata=None):
+                count=None, match_count=None, metadata=None, dmg_labels=None):
     db.drop_all()
     db.create_all()
     metadata = riot_api.data_fetch(summoner)
@@ -104,6 +105,18 @@ def datadisplay(summoner, match_1=None, match_2=None, match_3=None, match_4=None
                             "/items.json")
     itemsData = itemsURL.text
     jsonItemDictionary = json.loads(itemsData)
+
+    # Graph formatting variables for Jinja2
+    dmg_labels = []
+
+
+
+
+
+
+
+
+
 
     match_1 = Matches.query.filter(Matches.level_0 == 0).all()
     for z in match_1:

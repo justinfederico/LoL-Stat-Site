@@ -13,7 +13,7 @@ from Frontend.Nexus import Matches
 def data_fetch(summoner):
     metadata = []
     engine = create_engine(
-        'sqlite:///C:\\Users\\Jarel Macanas\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
+        'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
 
     Matches.metadata.create_all(engine)
     lol_watcher = LolWatcher('RGAPI-2fe6c723-e945-4f70-9235-507975787a22')  # do NOT share this or post this anywhere.
@@ -99,6 +99,14 @@ def data_fetch(summoner):
     finally:
         return metadata
 
+
+
+def get_free_champs():
+    lol_watcher = LolWatcher('RGAPI-2fe6c723-e945-4f70-9235-507975787a22')  # do NOT share this or post this anywhere.
+    my_region = 'na1'  # I don't care about other regions atm
+    free_champs = lol_watcher.champion.rotations(my_region)
+    free_champs = free_champs['freeChampionIds']
+    return free_champs
 # Error Handler
 
 # try:

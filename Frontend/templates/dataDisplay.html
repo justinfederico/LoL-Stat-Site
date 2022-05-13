@@ -375,7 +375,7 @@
                                         <li class="player-item">
                                             <div class="d-flex flex-row">
                                                 <div class="player-champion-icon">
-                                                    {% if match_list[(loop.index-1)][4].summonerName == summoner %}
+                                                    {% if match_list[(loop.index-1)][3].summonerName == summoner %}
                                                         <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][3].champion}}.png" alt="champ icon" width="20px" height="20px" style="border-radius:50%">
                                                     {% else %}
                                                         <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/{{match_list[(loop.index-1)][3].champion}}.png" alt="champ icon" width="20px" height="20px">
@@ -525,6 +525,7 @@
                                                         </div>
                                                         <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
                                                             <canvas id="newKillGraph" width="600" height="300">
+                                                                <script src="path/to/chartjs/dist/chart.js"></script>
                                                                 <script type="text/javascript">
                                                                     renderChampKillChart();
                                                                 </script>
@@ -537,6 +538,7 @@
                                                         </div>
                                                         <div style="display: inline-block; height: 300px; width: 300px; max-width: 300px; max-height: 300px">
                                                             <canvas id="newGoldEarnedGraph" width="300" height="300">
+                                                                <script src="path/to/chartjs/dist/chart.js"></script>
                                                                 <script type="text/javascript">
                                                                     renderGoldEarnedChart();
                                                                 </script>

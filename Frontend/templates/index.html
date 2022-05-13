@@ -38,7 +38,7 @@
             <nav class="navbar">
                 <ul class="navbar-nav">
                 <!-- LOGO/BRAND PLACEMENT -->
-                <a class="navbar-brand" href={{url_for('logoclick')}}>
+                <a class="navbar-brand" href={{url_for('default')}}>
                     <img class="align-content-center" src="{{url_for('static', filename='logo.png')}}" width="110" height="82">
                 </a>
                 <!-- NAVBAR ITEMS -->
@@ -81,9 +81,23 @@
         <!-- WEBSITE TITLE -->
         <header class="website-name-header">
             <a href={{url_for('default')}} class="webpage-title">LEAGUE OF LEGENDS STATISTICS TRACKER</a>
+
         </header>
         <hr class="one">
+
+        <h5 class="champ-rot">
+            Free Champion Rotation
+        </h5>
+
+
+        <main class="cards">
+
+            {% for x in free_champs %}
+                <img src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/{{x}}/{{x}}000.jpg" alt="champ-photo">
+            {% endfor %}
+        </main>
     </div>
+
 
     <!-- INSTALL BOOTSTRAP BUNDLE W/ POPPER -->
     <script src="../static/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
