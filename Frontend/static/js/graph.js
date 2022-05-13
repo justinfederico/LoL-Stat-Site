@@ -52,6 +52,5 @@ function renderGoldEarnedChart() {
             }
         }
     });
-    x++;
 }
 
