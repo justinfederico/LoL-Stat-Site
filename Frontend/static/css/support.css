@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+input {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  width: 470px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+
+  background: transparent;
+  outline: none;
+  color: #726659;
+
+  border: solid 1px #b3aca7;
+
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+#form {
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.name-box {
+  margin: 10px;
+  width: 450px;
+}
+
+.email-box {
+  margin: 10px;
+  width: 450px;
+}
+
+.message-box {
+  margin: 20px;
+}
+
+
+
+#submit:hover {
+  color: #DE8F00;
+}
+
+
+#forum-container {
+  display: inline-block;
+  margin: 0px 20px 0px 200px;
+  padding: unset;
+}
+
+#message {
+  width: 600px;
+}

@@ -57,7 +57,8 @@ def data_fetch(summoner):
                                     'totalMinionsKilled': row['totalMinionsKilled'],
                                     'visionWardsBoughtInGame': row['visionWardsBoughtInGame'],
                                     'visionScore': row['visionScore'], 'totalDamageDealt': row['totalDamageDealt'],
-                                    'totalDamageDealtToChampions': row['totalDamageDealtToChampions']}
+                                    'totalDamageDealtToChampions': row['totalDamageDealtToChampions'],
+                                    'goldEarned': row['goldEarned'], 'totalDamageTaken': row['totalDamageTaken']}
                 # 'perk': row['perk'], 'var1': row['var1'], 'var2': row['var2'], 'var3': row['var3']
                 participants.append(participants_row)
                 # runes_row = {'perk': row['perks']['styles']['selections']['perk'].values(),

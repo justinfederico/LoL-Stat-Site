@@ -42,6 +42,8 @@ class Matches(db.Model):
     visionScore = db.Column(db.Integer)
     totalDamageDealt = db.Column(db.BIGINT)
     totalDamageDealtToChampions = db.Column(db.BIGINT)
+    goldEarned = db.Column(db.BIGINT)
+    totalDamageTaken = db.Column(db.BIGINT)
     # perk = db.Column(db.BIGINT)
     # var1 = db.Column(db.BIGINT)
     # var2 = db.Column(db.BIGINT)
