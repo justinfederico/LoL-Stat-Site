@@ -16,7 +16,7 @@ def data_fetch(summoner):
         'sqlite:///C:\\Users\\justi\\PycharmProjects\\LoL-Stat-Site\\Frontend\\matches.db')  # using relative path
 
     Matches.metadata.create_all(engine)
-    lol_watcher = LolWatcher('RGAPI-2fe6c723-e945-4f70-9235-507975787a22')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-e3650182-e974-4263-a714-55b2c7ecdd8a')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
@@ -102,7 +102,7 @@ def data_fetch(summoner):
 
 
 def get_free_champs():
-    lol_watcher = LolWatcher('RGAPI-2fe6c723-e945-4f70-9235-507975787a22')  # do NOT share this or post this anywhere.
+    lol_watcher = LolWatcher('RGAPI-e3650182-e974-4263-a714-55b2c7ecdd8a')  # do NOT share this or post this anywhere.
     my_region = 'na1'  # I don't care about other regions atm
     free_champs = lol_watcher.champion.rotations(my_region)
     free_champs = free_champs['freeChampionIds']

@@ -72,12 +72,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href={{url_for('champions')}}>
-                            <ion-icon name="journal"></ion-icon>
-                            <span class="link-text">CHAMPIONS</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{url_for('about')}}">
                             <ion-icon name="contacts"></ion-icon>
                             <span class="link-text" role="button">ABOUT US</span>
@@ -274,17 +268,7 @@
                                             {% endif %}
                                         {% endfor %}
                                     </div>
-                                    <!-- KILL PARTICIPATION -->
-                                    <div class="d-flex" id="summoner-kp">
-                                        {% for i in range(0, 9) %}
-                                                {% if match_list[(outer_loop.index-1)][i].summonerName == summoner %}
-                                                    Kill Participation | guh
 
-                                                {% else %}
-
-                                                {% endif %}
-                                        {% endfor %}
-                                    </div>
                                     <!-- MMR AVERAGE -->
                                     <div class="d-flex" id="match-mmr-average">
                                         MMR Average | Gold 2
