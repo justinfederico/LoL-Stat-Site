@@ -1,20 +1,26 @@
-const labels = ["summoner1", "summoner2", "summoner3", "summoner4", "summoner5", "summoner6", "summoner7", "summoner8", "summoner9", "summoner10"];
+var label0 = [];
+var label1 = [];
+var label2 = [];
+var label3 = [];
+var label4 = [];
+
+
 const champKillData0 = {
-    labels: labels,
+    labels: label0,
     datasets: [{
         label: '1st Match',
-        data: [65, 59, 80, 81, 56, 55, 40, 43, 76, 10],
+        data: [],
         backgroundColor: [
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)'
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
         ],
         borderColor: [
             'rgba(0, 0, 0, 0.8)',
@@ -33,21 +39,21 @@ const champKillData0 = {
 };
 
 const champKillData1 = {
-    labels: labels,
+    labels: label1,
     datasets: [{
         label: '2nd Match',
-        data: [30, 54, 83, 41, 55, 76, 45, 67, 12, 32],
+        data: [],
         backgroundColor: [
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)'
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
             ],
         borderColor: [
             'rgba(0, 0, 0, 0.8)',
@@ -66,22 +72,22 @@ const champKillData1 = {
 };
 
 const champKillData2 = {
-    labels: labels,
+    labels: label2,
     datasets: [{
         label: '3rd Match',
-        data: [1, 87, 32, 32, 56, 46, 91, 67, 12, 32],
+        data: [],
         backgroundColor: [
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)'
-            ],
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
         borderColor: [
             'rgba(0, 0, 0, 0.8)',
             'rgba(0, 0, 0, 0.8)',
@@ -99,22 +105,22 @@ const champKillData2 = {
 };
 
 const champKillData3 = {
-    labels: labels,
+    labels: label3,
     datasets: [{
         label: '4th Match',
-        data: [4, 65, 75, 21, 32, 87, 21, 43, 12, 41],
+        data: [],
         backgroundColor: [
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)'
-            ],
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
         borderColor: [
             'rgba(0, 0, 0, 0.8)',
             'rgba(0, 0, 0, 0.8)',
@@ -132,21 +138,21 @@ const champKillData3 = {
 };
 
 const champKillData4 = {
-    labels: labels,
+    labels: label4,
     datasets: [{
         label: '5th Match',
-        data: [41, 75, 21, 43, 54, 12, 12, 43, 12],
+        data: [],
         backgroundColor: [
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(242, 0, 0, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)',
-            'rgba(0, 141, 242, 0.4)'
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
             ],
         borderColor: [
             'rgba(0, 0, 0, 0.8)',
@@ -165,3 +171,842 @@ const champKillData4 = {
 };
 
 const champKillDataArray = [champKillData0, champKillData1, champKillData2, champKillData3, champKillData4];
+
+
+const goldEarnedData0 = {
+    labels: label0,
+    datasets: [{
+        label: 'Total Gold Earned',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const goldEarnedData1 = {
+    labels: label1,
+    datasets: [{
+        label: 'Total Gold Earned',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const goldEarnedData2 = {
+    labels: label2,
+    datasets: [{
+        label: 'Total Gold Earned',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const goldEarnedData3 = {
+    labels: label3,
+    datasets: [{
+        label: 'Total Gold Earned',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const goldEarnedData4 = {
+    labels: label4,
+    datasets: [{
+        label: 'Total Gold Earned',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+goldEarnedDataArray = [goldEarnedData0, goldEarnedData1, goldEarnedData2, goldEarnedData3, goldEarnedData4];
+
+
+const totalDamageData0 = {
+    labels: label0,
+    datasets: [{
+        label: 'Total Damage Dealt to Champions',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageData1 = {
+    labels: label1,
+    datasets: [{
+        label: 'Total Damage Dealt to Champions',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageData2 = {
+    labels: label2,
+    datasets: [{
+        label: 'Total Damage Dealt to Champions',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageData3 = {
+    labels: label3,
+    datasets: [{
+        label: 'Total Damage Dealt to Champions',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+const totalDamageData4 = {
+    labels: label4,
+    datasets: [{
+        label: 'Total Damage Dealt to Champions',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+totalDamageDataArray = [totalDamageData0, totalDamageData1, totalDamageData2, totalDamageData3, totalDamageData4];
+
+
+const totalWardsPlacedData0 = {
+    labels: label0,
+    datasets: [{
+        label: 'Vision Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalWardsPlacedData1 = {
+    labels: label1,
+    datasets: [{
+        label: 'Vision Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalWardsPlacedData2 = {
+    labels: label2,
+    datasets: [{
+        label: 'Vision Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalWardsPlacedData3 = {
+    labels: label3,
+    datasets: [{
+        label: 'Vision Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalWardsPlacedData4 = {
+    labels: label4,
+    datasets: [{
+        label: 'Vision Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+totalWardsPlacedDataArray = [totalWardsPlacedData0, totalWardsPlacedData1, totalWardsPlacedData2, totalWardsPlacedData3, totalWardsPlacedData4];
+
+
+const totalDamageTakenData0 = {
+    labels: label0,
+    datasets: [{
+        label: 'Total Damage Taken',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageTakenData1 = {
+    labels: label1,
+    datasets: [{
+        label: 'Total Damage Taken',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageTakenData2 = {
+    labels: label2,
+    datasets: [{
+        label: 'Total Damage Taken',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageTakenData3 = {
+    labels: label3,
+    datasets: [{
+        label: 'Total Damage Taken',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalDamageTakenData4 = {
+    labels: label4,
+    datasets: [{
+        label: 'Total Damage Taken',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+totalDamageTakenDataArray = [totalDamageTakenData0, totalDamageTakenData1, totalDamageTakenData2, totalDamageTakenData3, totalDamageTakenData4];
+
+
+const totalCreepScoreData0 = {
+    labels: label0,
+    datasets: [{
+        label: 'Total Creep Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalCreepScoreData1 = {
+    labels: label1,
+    datasets: [{
+        label: 'Total Creep Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalCreepScoreData2 = {
+    labels: label2,
+    datasets: [{
+        label: 'Total Creep Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalCreepScoreData3 = {
+    labels: label3,
+    datasets: [{
+        label: 'Total Creep Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+const totalCreepScoreData4 = {
+    labels: label4,
+    datasets: [{
+        label: 'Total Creep Score',
+        data: [],
+        backgroundColor: [
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(255, 99, 132, 0.4)'
+        ],
+        borderColor: [
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+        ],
+        borderWidth: 1
+    }]
+}
+
+totalCreepScoreDataArray = [totalCreepScoreData0, totalCreepScoreData1, totalCreepScoreData2, totalCreepScoreData3, totalCreepScoreData4];

@@ -49,6 +49,56 @@
 
     </div>
 <body class="elements">
+    <!-- GRABBING DATA -->
+    {% for i in range(0, 10) %}
+        <script type="text/javascript">
+            label0[{{i}}] = {{(match_list[0][i].summonerName) | tojson}};
+            label1[{{i}}] = {{(match_list[1][i].summonerName) | tojson}};
+            label2[{{i}}] = {{(match_list[2][i].summonerName) | tojson}};
+            label3[{{i}}] = {{(match_list[3][i].summonerName) | tojson}};
+            label4[{{i}}] = {{(match_list[4][i].summonerName) | tojson}};
+
+            champKillData0.datasets[0].data.push({{(match_list[0][i].kills) | tojson}});
+            champKillData1.datasets[0].data.push({{(match_list[1][i].kills) | tojson}});
+            champKillData2.datasets[0].data.push({{(match_list[2][i].kills) | tojson}});
+            champKillData3.datasets[0].data.push({{(match_list[3][i].kills) | tojson}});
+            champKillData4.datasets[0].data.push({{(match_list[4][i].kills) | tojson}});
+
+            goldEarnedData0.datasets[0].data.push({{(match_list[0][i].goldEarned) | tojson}});
+            goldEarnedData1.datasets[0].data.push({{(match_list[1][i].goldEarned) | tojson}});
+            goldEarnedData2.datasets[0].data.push({{(match_list[2][i].goldEarned) | tojson}});
+            goldEarnedData3.datasets[0].data.push({{(match_list[3][i].goldEarned) | tojson}});
+            goldEarnedData4.datasets[0].data.push({{(match_list[4][i].goldEarned) | tojson}});
+
+            totalDamageData0.datasets[0].data.push({{(match_list[0][i].totalDamageDealt) | tojson}});
+            totalDamageData1.datasets[0].data.push({{(match_list[1][i].totalDamageDealt) | tojson}});
+            totalDamageData2.datasets[0].data.push({{(match_list[2][i].totalDamageDealt) | tojson}});
+            totalDamageData3.datasets[0].data.push({{(match_list[3][i].totalDamageDealt) | tojson}});
+            totalDamageData4.datasets[0].data.push({{(match_list[4][i].totalDamageDealt) | tojson}});
+
+            totalWardsPlacedData0.datasets[0].data.push({{(match_list[0][i].totalDamageDealt) | tojson}});
+            totalWardsPlacedData1.datasets[0].data.push({{(match_list[1][i].totalDamageDealt) | tojson}});
+            totalWardsPlacedData2.datasets[0].data.push({{(match_list[2][i].totalDamageDealt) | tojson}});
+            totalWardsPlacedData3.datasets[0].data.push({{(match_list[3][i].totalDamageDealt) | tojson}});
+            totalWardsPlacedData4.datasets[0].data.push({{(match_list[4][i].totalDamageDealt) | tojson}});
+
+            totalDamageTakenData0.datasets[0].data.push({{(match_list[0][i].totalDamageTaken) | tojson}});
+            totalDamageTakenData1.datasets[0].data.push({{(match_list[1][i].totalDamageTaken) | tojson}});
+            totalDamageTakenData2.datasets[0].data.push({{(match_list[2][i].totalDamageTaken) | tojson}});
+            totalDamageTakenData3.datasets[0].data.push({{(match_list[3][i].totalDamageTaken) | tojson}});
+            totalDamageTakenData4.datasets[0].data.push({{(match_list[4][i].totalDamageTaken) | tojson}});
+
+            totalCreepScoreData0.datasets[0].data.push({{(match_list[0][i].totalMinionsKilled) | tojson}});
+            totalCreepScoreData1.datasets[0].data.push({{(match_list[1][i].totalMinionsKilled) | tojson}});
+            totalCreepScoreData2.datasets[0].data.push({{(match_list[2][i].totalMinionsKilled) | tojson}});
+            totalCreepScoreData3.datasets[0].data.push({{(match_list[3][i].totalMinionsKilled) | tojson}});
+            totalCreepScoreData4.datasets[0].data.push({{(match_list[4][i].totalMinionsKilled) | tojson}});
+        </script>
+    {% endfor %}
+
+
+
+
     <!-- HOMEPAGE LEFT-SIDE NAVBAR -->
     <div class="container-fluid">
         <div class="row">
@@ -69,12 +119,6 @@
                         <a class="nav-link active" href={{url_for('lookup')}}>
                             <ion-icon name="search"></ion-icon>
                             <span class="link-text" role="button">SUMMONER SEARCH</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={{url_for('champions')}}>
-                            <ion-icon name="journal"></ion-icon>
-                            <span class="link-text">CHAMPIONS</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -511,10 +555,10 @@
                                         <div class="tab-pane fade show active" id="newMatchAnalysisTab" role="tabpanel">
                                             <div class="d-flex flex-row flex-fill justify-content-center team-legend">
                                                 <div class="losing-team">
-                                                    <span style="color: rgba(242, 0, 0, 0.8);">- LOSING TEAM</span>
+                                                    <span style="color: rgba(54, 162, 235, 0.6);">- BLUE SIDE</span>
                                                 </div>
                                                 <div class="winning-team">
-                                                    <span style="color: rgba(0, 141, 242, 0.8);">- WINNING TEAM</span>
+                                                    <span style="color: rgba(255, 99, 132, 0.6);">- RED SIDE</span>
                                                 </div>
                                             </div>
                                             <div class="container-fluid graphs">
@@ -536,8 +580,8 @@
                                                         <div>
                                                             GOLD EARNED
                                                         </div>
-                                                        <div style="display: inline-block; height: 300px; width: 300px; max-width: 300px; max-height: 300px">
-                                                            <canvas id="newGoldEarnedGraph" width="300" height="300">
+                                                        <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
+                                                            <canvas id="newGoldEarnedGraph" width="600" height="300">
                                                                 <script src="path/to/chartjs/dist/chart.js"></script>
                                                                 <script type="text/javascript">
                                                                     renderGoldEarnedChart();
@@ -547,17 +591,53 @@
                                                     </div>
                                                     <div class="w-100"></div>
                                                     <div class="col graph-col">
-                                                        TOTAL DAMAGE DEALT TO CHAMPIONS
+                                                        <div>
+                                                            TOTAL DAMAGE DEALT TO CHAMPIONS
+                                                        </div>
+                                                        <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
+                                                            <canvas id="newTotalDamageGraph" width="600" height="300">
+                                                                <script type="text/javascript">
+                                                                    renderTotalDamageChart();
+                                                                </script>
+                                                            </canvas>
+                                                        </div>
                                                     </div>
                                                     <div class="col graph-col">
-                                                        WARDS PLACED
+                                                        <div>
+                                                            VISION SCORE
+                                                        </div>
+                                                        <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
+                                                            <canvas id="newVisionScoreGraph" width="600" height="300">
+                                                                <script type="text/javascript">
+                                                                    renderVisionScoreGraph();
+                                                                </script>
+                                                            </canvas>
+                                                        </div>
                                                     </div>
                                                     <div class="w-100"></div>
                                                     <div class="col graph-col">
-                                                        TOTAL DAMAGE TAKEN
+                                                        <div>
+                                                            TOTAL DAMAGE TAKEN
+                                                        </div>
+                                                        <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
+                                                            <canvas id="newTotalDamageTakenGraph" width="600" height="300">
+                                                                <script type="text/javascript">
+                                                                    renderTotalDamageTakenGraph();
+                                                                </script>
+                                                            </canvas>
+                                                        </div>
                                                     </div>
                                                     <div class="col graph-col">
-                                                        TOTAL CREEP SCORE
+                                                        <div>
+                                                            TOTAL CREEP SCORE
+                                                        </div>
+                                                        <div style="display: inline-block; height: 300px; width: 600px; max-width: 600px; max-height: 300px">
+                                                            <canvas id="newTotalCreepScoreGraph" width="600" height="300">
+                                                                <script type="text/javascript">
+                                                                    renderTotalCreepScoreGraph();
+                                                                </script>
+                                                            </canvas>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
