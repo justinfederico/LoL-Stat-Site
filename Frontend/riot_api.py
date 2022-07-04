@@ -17,7 +17,7 @@ def data_fetch(summoner):
 
     Matches.metadata.create_all(engine)
     lol_watcher = LolWatcher('insert_your_key_here')  # do NOT share this or post this anywhere.
-    my_region = 'na1'  # I don't care about other regions atm
+    my_region = 'na1'  # I don't care about other regions at the moment, as NA is my home region.
     me = lol_watcher.summoner.by_name('na1', summoner)
     n_games = 5  # just for testing, keep it under 10
     Games = {}  # data container for all match data
